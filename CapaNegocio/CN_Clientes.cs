@@ -41,6 +41,13 @@ namespace CapaNegocio
 
         }
 
+        public DataTable BuscarClienteNobre(string NOMBRE_U)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.BuscarClienteNombre(NOMBRE_U);
+            return tabla;
+        }
+
 
     }
 }

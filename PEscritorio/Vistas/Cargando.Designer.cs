@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -48,6 +48,17 @@
             this.pnlTitulo.Size = new System.Drawing.Size(845, 60);
             this.pnlTitulo.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(291, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(265, 48);
+            this.label1.TabIndex = 121;
+            this.label1.Text = "Pinturas Juarez";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -55,21 +66,10 @@
             this.pictureBox1.InitialImage = global::PEscritorio.Properties.Resources.fondo_de_carga;
             this.pictureBox1.Location = new System.Drawing.Point(0, 60);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(845, 395);
+            this.pictureBox1.Size = new System.Drawing.Size(845, 312);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(272, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 42);
-            this.label1.TabIndex = 121;
-            this.label1.Text = "Pinturas Juarez";
             // 
             // timer1
             // 
@@ -85,7 +85,7 @@
             // 
             this.progressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(166)))), ((int)(((byte)(175)))));
             this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.progressBar1.Location = new System.Drawing.Point(55, 383);
+            this.progressBar1.Location = new System.Drawing.Point(61, 319);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(743, 31);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.ClientSize = new System.Drawing.Size(845, 455);
+            this.ClientSize = new System.Drawing.Size(845, 372);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlTitulo);

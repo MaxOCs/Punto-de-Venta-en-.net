@@ -1,8 +1,10 @@
-﻿using CapaNegocio;
+﻿using CapaDatos;
+using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +18,15 @@ namespace PEscritorio
     {
       
         CN_Clientes objetoCNCliente = new CN_Clientes();
-        
+
+
+        private CD_Conexion conexion1 = new CD_Conexion();
+
+        SqlDataReader leer; //LEER FILAS DE LA TABLA
+        DataTable tabla = new DataTable(); //Para almacenar las filas de la consulta
+        SqlCommand comando = new SqlCommand();//Para ejecutar instrucciones o procedimientos almacenados
+
+
         public void Desaparecer()
         {
           
@@ -113,15 +123,66 @@ namespace PEscritorio
 
             }
         }
-
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void MostrarNombre()
         {
+            dgvClientes.DataSource = BuscarClienteNombre(txtBuscar.Text);
+            dgvClientes.Refresh();
 
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbOpc.SelectedIndex == 0)
+                {
+
+
+                }
+                if (cbOpc.SelectedIndex == 1)
+                {
+                  
+                        MostrarNombre();
+
+                   
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+          
+        }
+
+        public DataTable BuscarClienteNombre(string NOMBRE_C)
+        {
+            comando.Connection = conexion1.AbrirConexion();
+            comando.CommandText = "BuscarNombreCliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NOMBRE_C", NOMBRE_C);
+            leer = comando.ExecuteReader();
+
+            tabla.Load(leer);
+            conexion1.CerrarConexion();
+
+            return tabla;
+        }
+
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                MostrarClientes();
+
+            }
         }
     }
 }

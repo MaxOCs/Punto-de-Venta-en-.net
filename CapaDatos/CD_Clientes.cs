@@ -86,6 +86,21 @@ namespace CapaDatos
 
         }
 
+        //METODO PARA BUSCAR POR NOMBRE CLIENTE
+        public DataTable BuscarClienteNombre(string NOMBRE_C)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "BuscarNombreCliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NOMBRE_C", NOMBRE_C);
+            leer = comando.ExecuteReader();
+
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+
+            return tabla;
+        }
+
 
 
 

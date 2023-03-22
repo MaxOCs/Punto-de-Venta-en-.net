@@ -20,18 +20,18 @@ namespace PEscritorio
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
-            {
-                MessageBox.Show("AGREGA UN USUARIO");
-            }
-            else
-            {
+            //if(textBox1.Text == "")
+            //{
+            //    MessageBox.Show("AGREGA UN USUARIO");
+            //}
+            //else
+            //{
                 this.Hide();
-                Cargando car = new Cargando();
-                car.ShowDialog();
+                //Cargando car = new Cargando();
+                //car.ShowDialog();
                 Form1 Menuprincipal = new Form1();
                 Menuprincipal.Show();
-            }
+            //}
         }
 
         private void Login_Load(object sender, EventArgs e)

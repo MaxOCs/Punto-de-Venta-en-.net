@@ -20,12 +20,42 @@ namespace CapaNegocio
             return tabla;
         }
 
-        public void InsertarRegistro(string URFC, string NOMBRE_U, string DIRECCCION_U, string CURP_U, string CODIGOPOSTAL_U, string CIUDAD_U, string FECHANACI_U, string TELEFONO_U, string PREGUNTA_U, string RESPUESTA_U, string USUARIO_U, string CONTRASEÑA_U, string TIPO_U)
+        public DataTable MostrarUsuario2()
         {
-            objetoCD.InsertarRegistro(URFC, NOMBRE_U, DIRECCCION_U, CURP_U, CODIGOPOSTAL_U, CIUDAD_U, Convert.ToDateTime(FECHANACI_U), Convert.ToDecimal(TELEFONO_U), PREGUNTA_U, RESPUESTA_U, USUARIO_U, CONTRASEÑA_U, TIPO_U);
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.MostrarUserVistaEmpleado();
+            return tabla;
+        }
+        //public DataTable BuscarRFC()
+        //{
+        //    DataTable tabla = new DataTable();
+        //    tabla = objetoCD.BuscarRFC();
+        //    return tabla;
+        //}
+        public void InsertarRegistro(string URFC, string NOMBRE, string DIRECCION, string CURP, string CODIGOPOSTAL, string CIUDAD, DateTime FECHANACI, decimal TELEFONO, string TIPO, string PASWORD, string PREGUNTA, string RESPUESTA)
+        {
+            objetoCD.InsertarUsuario(URFC, NOMBRE, DIRECCION, CURP, CODIGOPOSTAL, CIUDAD, Convert.ToDateTime(FECHANACI), Convert.ToDecimal(TELEFONO), TIPO, PASWORD, PREGUNTA, RESPUESTA);
            
         }
+        public void EditarUsuario(string URFC, string NOMBRE, string DIRECCION, string CURP, string CODIGOPOSTAL, string CIUDAD, DateTime FECHANACI, decimal TELEFONO, string TIPO, string PASWORD, string PREGUNTA, string RESPUESTA)
+        {
+            objetoCD.EditarUsuario(URFC, NOMBRE, DIRECCION, CURP, CODIGOPOSTAL, CIUDAD, Convert.ToDateTime(FECHANACI), Convert.ToDecimal(TELEFONO), TIPO, PASWORD, PREGUNTA, RESPUESTA);
 
-   
+        }
+
+        public void EliminarUsuario(string URFC)
+        {
+            objetoCD.EliminarUsuario(URFC);
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

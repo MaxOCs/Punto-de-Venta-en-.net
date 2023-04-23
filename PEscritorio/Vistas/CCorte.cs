@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace PEscritorio
 {
     public partial class CCorte : Form
     {
+        CN_Corte objCorte = new CN_Corte();
         public CCorte()
         {
             InitializeComponent();
@@ -141,5 +143,55 @@ namespace PEscritorio
             
         }
 
+        private void CCorte_Load(object sender, EventArgs e)
+        {
+            MostrarCortes();
+        }
+        private void MostrarCortes()
+        {
+            dgvCorte.DataSource = objCorte.MostrarCorte();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvCorte.CurrentCell = null;
+            string searchText = txtBuscar.Text;
+            if (!string.IsNullOrEmpty(searchText.ToLower()))
+            {
+                foreach (DataGridViewRow row in dgvCorte.Rows)
+                {
+                    string noventa = row.Cells["NOCORTE"].Value.ToString().ToLower();
+                    string fecha = row.Cells["FECHA"].Value.ToString().ToLower();
+                    string total = row.Cells["TOTAL"].Value.ToString().ToLower();
+                    string tocaja = row.Cells["TOTALCAJA"].Value.ToString().ToLower();
+                    string fondo = row.Cells["FONDOINICIAL"].Value.ToString().ToLower();
+                    string urfc = row.Cells["NOMBRE"].Value.ToString().ToLower();
+
+
+
+
+                    if (noventa.Contains(searchText) || fecha.Contains(searchText) || total.Contains(searchText) || tocaja.Contains(searchText) || fondo.Contains(searchText) || urfc.Contains(searchText))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgvCorte.Rows)
+                {
+                    row.Visible = true;
+                }
+            }
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtBuscar_TextChanged(sender, e);
+        }
     }
 }

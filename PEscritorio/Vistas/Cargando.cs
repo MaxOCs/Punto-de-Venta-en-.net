@@ -35,6 +35,7 @@ namespace PEscritorio.Vistas
             {
                 timer2.Stop();
                 this.Close();
+              
             }
         }
 
@@ -50,6 +51,11 @@ namespace PEscritorio.Vistas
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlTitulo_Paint(object sender, PaintEventArgs e)
         {
 
         }

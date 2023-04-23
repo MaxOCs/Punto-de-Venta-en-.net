@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Balance.cs" />
+    <Compile Include="CN_Compras.cs" />
+    <Compile Include="CN_Corte.cs" />
+    <Compile Include="CN_mercanciaM.cs" />
     <Compile Include="CN_Clientes.cs" />
+    <Compile Include="CN_mercanciaP.cs" />
     <Compile Include="CN_Proveedor.cs" />
     <Compile Include="CN_Usuario.cs" />
+    <Compile Include="CN_Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

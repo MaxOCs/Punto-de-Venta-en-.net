@@ -553,6 +553,16 @@ namespace PEscritorio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_libro_mayor_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-libro-mayor-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_logística_de_entrega_de_paquetes_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-logística-de-entrega-de-paquetes-50", resourceCulture);

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,6 +48,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -62,6 +80,69 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDPinturaJuarezDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPinturaJuarezDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPinturaJuarezDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPinturaJuarezDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPinturaJuarezDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPinturaJuarezDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BDPinturaJuarezDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDPinturaJuarezDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarContra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarContra.Designer.cs">
+      <DependentUpon>CambiarContra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSaldoInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSaldoInicial.Designer.cs">
+      <DependentUpon>FormSaldoInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMJOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMJOS.Designer.cs">
+      <DependentUpon>FRMJOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuperarContraseña.Designer.cs">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ticketbueno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ticketbueno.Designer.cs">
+      <DependentUpon>ticketbueno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Balance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Balance.Designer.cs">
+      <DependentUpon>Balance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Cargando.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +191,12 @@
     <Compile Include="Vistas\Corte.Designer.cs">
       <DependentUpon>Corte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Cotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Cotizacion.Designer.cs">
+      <DependentUpon>Cotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\CPintura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +221,12 @@
     <Compile Include="Vistas\CVentas.Designer.cs">
       <DependentUpon>CVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\C_COMPRAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\C_COMPRAS.Designer.cs">
+      <DependentUpon>C_COMPRAS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Factura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +249,12 @@
     <Compile Include="MenuRenderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\F_CORTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\F_CORTE.Designer.cs">
+      <DependentUpon>F_CORTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\RClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +300,33 @@
     <Compile Include="Vistas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CambiarContra.resx">
+      <DependentUpon>CambiarContra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COTIZACION.rdlc" />
+    <EmbeddedResource Include="FAC1.rdlc" />
+    <EmbeddedResource Include="FACTURA.rdlc" />
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSaldoInicial.resx">
+      <DependentUpon>FormSaldoInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMJOS.resx">
+      <DependentUpon>FRMJOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pinturas.rdlc" />
+    <EmbeddedResource Include="RecuperarContraseña.resx">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TICK1.rdlc" />
+    <EmbeddedResource Include="Ticket.rdlc" />
+    <EmbeddedResource Include="ticketbueno.resx">
+      <DependentUpon>ticketbueno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Balance.resx">
+      <DependentUpon>Balance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Cargando.resx">
       <DependentUpon>Cargando.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,11 +345,16 @@
     <EmbeddedResource Include="Vistas\CMateriales.resx">
       <DependentUpon>CMateriales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\COMPRA.rdlc" />
     <EmbeddedResource Include="Vistas\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\CORTE.rdlc" />
     <EmbeddedResource Include="Vistas\Corte.resx">
       <DependentUpon>Corte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Cotizacion.resx">
+      <DependentUpon>Cotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\CPintura.resx">
       <DependentUpon>CPintura.cs</DependentUpon>
@@ -236,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\CVentas.resx">
       <DependentUpon>CVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\C_COMPRAS.resx">
+      <DependentUpon>C_COMPRAS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
@@ -256,6 +390,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\F_CORTE.resx">
+      <DependentUpon>F_CORTE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\RClientes.resx">
       <DependentUpon>RClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +414,51 @@
     <EmbeddedResource Include="Vistas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BDPinturaJuarezDataSet.xsc">
+      <DependentUpon>BDPinturaJuarezDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDPinturaJuarezDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPinturaJuarezDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPinturaJuarezDataSet.xss">
+      <DependentUpon>BDPinturaJuarezDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDPinturaJuarezDataSet1.xsc">
+      <DependentUpon>BDPinturaJuarezDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BDPinturaJuarezDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPinturaJuarezDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPinturaJuarezDataSet1.xss">
+      <DependentUpon>BDPinturaJuarezDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BDPinturaJuarezDataSet2.xsc">
+      <DependentUpon>BDPinturaJuarezDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BDPinturaJuarezDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPinturaJuarezDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPinturaJuarezDataSet2.xss">
+      <DependentUpon>BDPinturaJuarezDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BDPinturaJuarezDataSet3.xsc">
+      <DependentUpon>BDPinturaJuarezDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BDPinturaJuarezDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDPinturaJuarezDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDPinturaJuarezDataSet3.xss">
+      <DependentUpon>BDPinturaJuarezDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -581,6 +763,22 @@
       <Project>{cc58f85a-a48e-49e8-ab7c-4bf5d9ef6b13}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-libro-mayor-50.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

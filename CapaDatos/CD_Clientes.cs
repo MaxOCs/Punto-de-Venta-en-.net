@@ -11,99 +11,87 @@ namespace CapaDatos
     public class CD_Clientes
     {
         private CD_Conexion conexion = new CD_Conexion();
-
-        SqlDataReader leer; //LEER FILAS DE LA TABLA
-        DataTable tabla = new DataTable(); //Para almacenar las filas de la consulta
-        SqlCommand comando = new SqlCommand();//Para ejecutar instrucciones o procedimientos almacenados
-
-
         //METODO PARA MOSTRAR CLIENTES
         public DataTable Mostrar()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "MostrarClientes";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
+            SqlCommand comandoMCL = new SqlCommand();
+            comandoMCL.Connection = conexion.AbrirConexion();
+            comandoMCL.CommandText = "MostrarClientes";
+            comandoMCL.CommandType = CommandType.StoredProcedure;
+            SqlDataReader leerMCL = comandoMCL.ExecuteReader();
+            DataTable tablaMCL = new DataTable();
+            tablaMCL.Load(leerMCL);
             conexion.CerrarConexion();
-
-            return tabla;
+            return tablaMCL;
         }
-
+        public DataTable BuscarRFC()
+        {
+            SqlCommand comando7 = new SqlCommand();//Para ejecutar instrucciones o procedimientos almacenados
+            comando7.Connection = conexion.AbrirConexion();
+            comando7.CommandText = "BuscarRFCCliente";
+            comando7.CommandType = CommandType.StoredProcedure;
+            SqlDataReader leer3 = comando7.ExecuteReader();
+            DataTable tabla3 = new DataTable(); //Para almacenar las filas de la consulta
+            tabla3.Clear();
+            tabla3.Load(leer3);
+            conexion.CerrarConexion();
+            return tabla3;
+        }
+        public DataTable BuscarNombre()
+        {
+            SqlCommand comando8 = new SqlCommand();//Para ejecutar instrucciones o procedimientos almacenados
+            comando8.Connection = conexion.AbrirConexion();
+            comando8.CommandText = "BuscarRFCCliente";
+            comando8.CommandType = CommandType.StoredProcedure;
+            SqlDataReader leer4 = comando8.ExecuteReader();
+            DataTable tabla4 = new DataTable(); //Para almacenar las filas de la consulta
+            tabla4.Clear();
+            tabla4.Load(leer4);
+            conexion.CerrarConexion();
+            return tabla4;
+        }
         //METODO PARA INSERTAR CLIENTES
-        public void InsertarRegistro(int CLIRFC, string NOMBRE_U, string DIRECCCION_U, string CORREOELECTRONICO_C, decimal CODIGOPOSTAL_U, decimal TELEFONO_C)
+        public void InsertarRegistro(string CLIRFC, string NOMBRE, string DIRECCION, string CORREOELECTRONICO, decimal CODIGOPOSTAL, decimal TELEFONO)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "InsertarClientes";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@CLIRFC", CLIRFC);
-            comando.Parameters.AddWithValue("@NOMBRE_C", NOMBRE_U);
-            comando.Parameters.AddWithValue("@DIRECCION_C", DIRECCCION_U);
-            comando.Parameters.AddWithValue("@CORREOELECTRONICO_C", CORREOELECTRONICO_C);
-            comando.Parameters.AddWithValue("@CODIGOPOSTAL_C", CODIGOPOSTAL_U);
-            comando.Parameters.AddWithValue("@TELEFONO_C", TELEFONO_C);
-            comando.ExecuteNonQuery();
+            SqlCommand comandoINCL = new SqlCommand();
+            comandoINCL.Connection = conexion.AbrirConexion();
+            comandoINCL.CommandText = "InsertarClientes";
+            comandoINCL.CommandType = CommandType.StoredProcedure;
+            comandoINCL.Parameters.AddWithValue("@CLIRFC", CLIRFC);
+            comandoINCL.Parameters.AddWithValue("@NOMBRE", NOMBRE);
+            comandoINCL.Parameters.AddWithValue("@DIRECCION", DIRECCION);
+            comandoINCL.Parameters.AddWithValue("@CORREOELECTRONICO", CORREOELECTRONICO);
+            comandoINCL.Parameters.AddWithValue("@CODIGOPOSTAL", CODIGOPOSTAL);
+            comandoINCL.Parameters.AddWithValue("@TELEFONO", TELEFONO);
+            comandoINCL.ExecuteNonQuery();
         }
 
-        //METODO PARA EDITAR REGISTROS
-        public void EditarRegistro(string DIRECCCION_U, string CORREOELECTRONICO_C, decimal CODIGOPOSTAL_U, decimal TELEFONO_C, int CLIRFC)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarCliente";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@DIRECCION_C", DIRECCCION_U);
-            comando.Parameters.AddWithValue("@CORREOELECTRONICO_C", CORREOELECTRONICO_C);
-            comando.Parameters.AddWithValue("@CODIGOPOSTAL_C", CODIGOPOSTAL_U);
-            comando.Parameters.AddWithValue("@TELEFONO_C", TELEFONO_C);
-            comando.Parameters.AddWithValue("@CLIRFC", CLIRFC);
-            comando.ExecuteNonQuery();
-        }
 
         //METODO PARA ELIMINAR REGISTRO
-        public void EliminarRegistro(int CLIRFC)
+        public void EliminarRegistro(string CLIRFC)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarCliente";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@CLIRFC", CLIRFC);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+            SqlCommand comandoELCL = new SqlCommand();
+            comandoELCL.Connection = conexion.AbrirConexion();
+            comandoELCL.CommandText = "EliminarCliente";
+            comandoELCL.CommandType = CommandType.StoredProcedure;
+            comandoELCL.Parameters.AddWithValue("@CLIRFC", CLIRFC);
+            comandoELCL.ExecuteNonQuery();
+            comandoELCL.Parameters.Clear();
         }
-
         //METODO PARA ACTUALIZAR REGISTRO
-        public void ActualizarCliente(int CLIRFC, string NOMBRE_U, string DIRECCCION_U, string CORREOELECTRONICO_C, decimal CODIGOPOSTAL_U, decimal TELEFONO_C)
+        public void ActualizarCliente(string CLIRFC, string NOMBRE, string DIRECCION, string CORREOELECTRONICO, decimal CODIGOPOSTAL, decimal TELEFONO)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "ActualizarCliente";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@CLIRFC", CLIRFC);
-            comando.Parameters.AddWithValue("@NOMBRE_C", NOMBRE_U);
-            comando.Parameters.AddWithValue("@DIRECCION_C", DIRECCCION_U);
-            comando.Parameters.AddWithValue("@CORREOELECTRONICO_C", CORREOELECTRONICO_C);
-            comando.Parameters.AddWithValue("@CODIGOPOSTAL_C", CODIGOPOSTAL_U);
-            comando.Parameters.AddWithValue("@TELEFONO_C", TELEFONO_C);
-            comando.ExecuteNonQuery();
-
+            SqlCommand comandoACL = new SqlCommand();
+            comandoACL.Connection = conexion.AbrirConexion();
+            comandoACL.CommandText = "ActualizarCliente";
+            comandoACL.CommandType = CommandType.StoredProcedure;
+            comandoACL.Parameters.AddWithValue("@CLIRFC", CLIRFC);
+            comandoACL.Parameters.AddWithValue("@NOMBRE", NOMBRE);
+            comandoACL.Parameters.AddWithValue("@DIRECCION", DIRECCION);
+            comandoACL.Parameters.AddWithValue("@CORREOELECTRONICO", CORREOELECTRONICO);
+            comandoACL.Parameters.AddWithValue("@CODIGOPOSTAL", CODIGOPOSTAL);
+            comandoACL.Parameters.AddWithValue("@TELEFONO", TELEFONO);
+            comandoACL.ExecuteNonQuery();
         }
-
-        //METODO PARA BUSCAR POR NOMBRE CLIENTE
-        public DataTable BuscarClienteNombre(string NOMBRE_C)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "BuscarNombreCliente";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NOMBRE_C", NOMBRE_C);
-            leer = comando.ExecuteReader();
-
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-
-            return tabla;
-        }
-
-
-
-
-
     }
 }

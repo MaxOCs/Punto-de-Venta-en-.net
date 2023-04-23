@@ -18,12 +18,6 @@ namespace PEscritorio
         CN_Usuario objetoCNUser = new CN_Usuario();
         
 
-        private void BtnCompras_Click(object sender, EventArgs e)
-        {
-            Compras PantallaCompras = new Compras();
-            this.Close();
-            PantallaCompras.ShowDialog();
-        }
 
         private void BtnCatalogo_Click(object sender, EventArgs e)
         {
@@ -49,9 +43,7 @@ namespace PEscritorio
 
         private void BtnCorte_Click(object sender, EventArgs e)
         {
-            Corte PantallaCorte = new Corte();
-            this.Close();
-            PantallaCorte.ShowDialog();
+         
         }
 
         private void BtnRegistro_Click(object sender, EventArgs e)
@@ -172,6 +164,58 @@ namespace PEscritorio
             MostrarUsuarios();
         }
 
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvUsuario.CurrentCell = null;
+            string searchText = txtBuscar.Text;
+            if (!string.IsNullOrEmpty(searchText.ToLower()))
+            {
+                foreach (DataGridViewRow row in dgvUsuario.Rows)
+                {
+                    string rfc = row.Cells["URFC"].Value.ToString().ToLower();
+                    string nombre = row.Cells["NOMBRE"].Value.ToString().ToLower();
+                    string direccion = row.Cells["DIRECCION"].Value.ToString().ToLower();
+                    string curp = row.Cells["CURP"].Value.ToString().ToLower();
+                    string postal = row.Cells["CODIGOPOSTAL"].Value.ToString().ToLower();
+                    string fecha = row.Cells["FECHANACI"].Value.ToString().ToLower();
+                    string telefono = row.Cells["TELEFONO"].Value.ToString().ToLower();
+                    string tipo = row.Cells["TIPO"].Value.ToString().ToLower();
+                    string contraseña = row.Cells["PASWORD"].Value.ToString().ToLower();
+                    string pregunta = row.Cells["PREGUNTA"].Value.ToString().ToLower();
+                    string respuesta = row.Cells["RESPUESTA"].Value.ToString().ToLower();
+
+
+
+
+
+
+
+
+                    if (rfc.Contains(searchText) || nombre.Contains(searchText) || direccion.Contains(searchText) || curp.Contains(searchText) || postal.Contains(searchText) || fecha.Contains(searchText) || telefono.Contains(searchText) || tipo.Contains(searchText) || contraseña.Contains(searchText) || pregunta.Contains(searchText) || respuesta.Contains(searchText))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgvUsuario.Rows)
+                {
+                    row.Visible = true;
+                }
+            }
+
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtBuscar_TextChanged(sender, e);
+        }
+
         public CUsuarios()
         {
             InitializeComponent();
@@ -180,9 +224,7 @@ namespace PEscritorio
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            Ventas PantallaVentas = new Ventas();
-            this.Close();
-            PantallaVentas.ShowDialog();
+           
         }
     }
 }

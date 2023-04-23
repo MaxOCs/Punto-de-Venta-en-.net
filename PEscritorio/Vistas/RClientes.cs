@@ -15,9 +15,6 @@ namespace PEscritorio
 {
     public partial class RClientes : Form
     {
-        byte ce = 0, re = 0, ipm = 0;
-        
-
         CN_Clientes objetoCNCliente = new CN_Clientes();
 
         private CD_Conexion conexion1 = new CD_Conexion();
@@ -28,157 +25,21 @@ namespace PEscritorio
 
         public RClientes()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
-
-        private void BtnRProvee_Click(object sender, EventArgs e)
-        {
-            RProveedor PantallaRProveerdor = new RProveedor();
-            this.Close();
-            PantallaRProveerdor.ShowDialog();
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            Ventas PantallaVentas = new Ventas();
-            this.Close();
-            PantallaVentas.ShowDialog();
-        }
-
-        private void BtnCompras_Click(object sender, EventArgs e)
-        {
-            Compras PantallaCompras = new Compras();
-            this.Close();
-            PantallaCompras.ShowDialog();
-        }
-        public void Desaparecer()
-        {
-           
-        }
-
-     
-       
-
-        private void BtnCorte_Click(object sender, EventArgs e)
-        {
-            Corte PantallaCorte = new Corte();
-            this.Close();
-            PantallaCorte.ShowDialog();
-        }
-
-        private void BtnFactura_Click(object sender, EventArgs e)
-        {
-            Factura PantallaFactura = new Factura();
-            this.Close();
-            PantallaFactura.ShowDialog();
-        }
-
-      
-
-        private void BtnRUsuar_Click(object sender, EventArgs e)
-        {
-            RUsuario PantallaRUsuario = new RUsuario();
-            this.Close();
-            PantallaRUsuario.ShowDialog();
-        }
-
-        private void BtnRClie_Click(object sender, EventArgs e)
-        {
-            Desaparecer();
-        }
-
-        private void BtnRMateria_Click(object sender, EventArgs e)
-        {
-            RMateriales RMateria = new RMateriales();
-            this.Close();
-            RMateria.ShowDialog();
-        }
-
-        private void BtnCProvee_Click(object sender, EventArgs e)
-        {
-            CProveedores PantallaCProveedores = new CProveedores();
-            this.Close();
-            PantallaCProveedores.ShowDialog();
-        }
-
-        private void BtnCUsuari_Click(object sender, EventArgs e)
-        {
-            CUsuarios PantallaCUsuari = new CUsuarios();
-            this.Close();
-            PantallaCUsuari.ShowDialog();
-        }
-
-        private void BtnCClie_Click(object sender, EventArgs e)
-        {
-            CClientes PantallaCClie = new CClientes();
-            this.Close();
-            PantallaCClie.ShowDialog();
-        }
-
-        private void BtnCCompras_Click(object sender, EventArgs e)
-        {
-            CCompras PantallasCCompra = new CCompras();
-            this.Close();
-            PantallasCCompra.ShowDialog();
-        }
-
-      
-
-        private void BtnCBalance_Click(object sender, EventArgs e)
-        {
-            CBalance PantallaCBalance = new CBalance();
-            this.Close();
-            PantallaCBalance.ShowDialog();
-        }
-
-        private void BtnCCorte_Click(object sender, EventArgs e)
-        {
-            CCorte PantallaCCorte = new CCorte();
-            this.Close();
-            PantallaCCorte.ShowDialog();
-        }
-
-        private void BtnCPintura_Click(object sender, EventArgs e)
-        {
-            CPintura CPintura = new CPintura();
-            this.Close();
-            CPintura.ShowDialog();
-        }
-
-        private void BtnCMaterias_Click(object sender, EventArgs e)
-        {
-            CMateriales CMateriales = new CMateriales();
-            this.Close();
-            CMateriales.ShowDialog();
-        }
-
-        private void BtnCVenta_Click(object sender, EventArgs e)
-        {
-            CVentas CVentas = new CVentas();
-            this.Close();
-            CVentas.ShowDialog();
-        }
-
-        private void BtnReportes_Click(object sender, EventArgs e)
-        {
-            ReprtesVentas PantallaReprtesVentas = new ReprtesVentas();
-            this.Close();
-            PantallaReprtesVentas.ShowDialog();
-        }
-
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
                 objetoCNCliente.InsertarRegistro(txtRFC.Text, txtNombre.Text, txtDireccion.Text, txtCorreo.Text, txtCodigoPostal.Text, txtTelefono.Text);
                 MessageBox.Show("Se inserto correctamente");
+                Limpiar();
 
             }
             catch (Exception Ex)
             {
 
-                MessageBox.Show("Hubo un error por: "+ Ex);
+                MessageBox.Show("Hubo un error");
             }
         }
 
@@ -187,6 +48,15 @@ namespace PEscritorio
 
         }
         
+        public void Limpiar()
+        {
+            txtCorreo.Text = "";
+            txtNombre.Text = "";
+            txtDireccion.Text = "";
+            txtCorreo.Text = "";
+            txtCodigoPostal.Text = "";
+            txtTelefono.Text = "";
+        }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -195,6 +65,7 @@ namespace PEscritorio
                 objetoCNCliente.ActualizarCliente(txtRFC.Text, txtNombre.Text, txtDireccion.Text, txtCorreo.Text, txtCodigoPostal.Text, txtTelefono.Text);
                 MessageBox.Show("Se actualizo el cliente:" + txtRFC.Text);
                 txtRFC.Focus();
+                Limpiar();
 
             }
             catch (Exception Ex)
@@ -212,6 +83,7 @@ namespace PEscritorio
                 objetoCNCliente.EliminarCliente(txtRFC.Text);
                 MessageBox.Show("Se elimino el cliente:" + txtRFC.Text);
                 txtRFC.Focus();
+                Limpiar();
 
             }
             catch (Exception Ex)
@@ -255,17 +127,111 @@ namespace PEscritorio
         {
 
         }
-
-        private void BtnRPintura_Click(object sender, EventArgs e)
+        private void BuscarRFC()
         {
-            RPintura PantallaRPintura = new RPintura();
-            this.Close();
-            PantallaRPintura.ShowDialog();
+            dgvBuscarClientes.DataSource = objetoCNCliente.MostrarRFC();
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            this.Close();
+            BuscarRFC();
+            Pbusqueda.Visible = true;
+            btnAceptarRFC.Visible = true;
+        }
+
+        private void btnAceptarProvedor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ro = Convert.ToInt32(dgvBuscarClientes.SelectedRows[0].Index);
+                txtRFC.Text = dgvBuscarClientes.Rows[ro].Cells[0].Value.ToString();
+                txtNombre.Text = dgvBuscarClientes.Rows[ro].Cells[1].Value.ToString();
+                txtDireccion.Text = dgvBuscarClientes.Rows[ro].Cells[2].Value.ToString();
+                txtCorreo.Text = dgvBuscarClientes.Rows[ro].Cells[3].Value.ToString();
+                txtCodigoPostal.Text = dgvBuscarClientes.Rows[ro].Cells[4].Value.ToString();
+                txtTelefono.Text = dgvBuscarClientes.Rows[ro].Cells[5].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("No selecciono un articulo");
+            }
+            Pbusqueda.Visible = false;
+        }
+        private void btnNombreCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ro = Convert.ToInt32(dgvBuscarClientes.SelectedRows[0].Index);
+                txtRFC.Text = dgvBuscarClientes.Rows[ro].Cells[0].Value.ToString();
+                txtNombre.Text = dgvBuscarClientes.Rows[ro].Cells[1].Value.ToString();
+                txtDireccion.Text = dgvBuscarClientes.Rows[ro].Cells[2].Value.ToString();
+                txtCorreo.Text = dgvBuscarClientes.Rows[ro].Cells[3].Value.ToString();
+                txtCodigoPostal.Text = dgvBuscarClientes.Rows[ro].Cells[4].Value.ToString();
+                txtTelefono.Text = dgvBuscarClientes.Rows[ro].Cells[5].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("No selecciono un articulo");
+            }
+            Pbusqueda.Visible = false;
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            Pbusqueda.Visible = false;
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRFC_Click(object sender, EventArgs e)
+        {
+            if (txtRFC.Text == "RFC")
+            {
+                txtRFC.Clear();
+            }
+        }
+
+        private void txtNombre_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "Nombre")
+            {
+                txtNombre.Clear();
+            }
+        }
+
+        private void txtDireccion_Click(object sender, EventArgs e)
+        {
+            if (txtDireccion.Text == "Dirección")
+            {
+                txtDireccion.Clear();
+            }
+        }
+
+        private void txtCorreo_Click(object sender, EventArgs e)
+        {
+            if (txtCorreo.Text == "Correo electronico")
+            {
+                txtCorreo.Clear();
+            }
+        }
+
+        private void txtCodigoPostal_Click(object sender, EventArgs e)
+        {
+            if (txtCodigoPostal.Text == "Código postal")
+            {
+                txtCodigoPostal.Clear();
+            }
+        }
+
+        private void txtTelefono_Click(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text == "Telefono")
+            {
+                txtTelefono.Clear();
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaNegocio;
+using PEscritorio.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace PEscritorio
@@ -102,9 +104,7 @@ namespace PEscritorio
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            Ventas PantallaVentas = new Ventas();
-            this.Close();
-            PantallaVentas.ShowDialog();
+            
         }
 
        
@@ -132,27 +132,7 @@ namespace PEscritorio
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (cbOpc.SelectedIndex == 0)
-                {
-
-
-                }
-                if (cbOpc.SelectedIndex == 1)
-                {
-                  
-                        MostrarNombre();
-
-                   
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+           
           
         }
 
@@ -178,11 +158,55 @@ namespace PEscritorio
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txtBuscar.Text == "")
-            {
-                MostrarClientes();
+            
 
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            //txtBuscar_TextChanged(sender, e);
+            
+        }
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            dgvClientes.CurrentCell = null;
+            string searchText = txtBuscar.Text;
+            if (!string.IsNullOrEmpty(searchText.ToLower()))
+            {
+                foreach (DataGridViewRow row in dgvClientes.Rows)
+                {
+                    string rfc = row.Cells["CLIRFC"].Value.ToString().ToLower();
+                    string nombre = row.Cells["NOMBRE"].Value.ToString().ToLower();
+                    string direccion = row.Cells["DIRECCION"].Value.ToString().ToLower();
+                    string correo = row.Cells["CORREOELECTRONICO"].Value.ToString().ToLower();
+                    string postal = row.Cells["CODIGOPOSTAL"].Value.ToString().ToLower();
+                    string telefono = row.Cells["TELEFONO"].Value.ToString().ToLower();
+                    if (rfc.Contains(searchText) || nombre.Contains(searchText) || direccion.Contains(searchText) || correo.Contains(searchText) || postal.Contains(searchText) || telefono.Contains(searchText))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
             }
+            else
+            {
+                foreach (DataGridViewRow row in dgvClientes.Rows)
+                {
+                    row.Visible = true;
+                }
+            }
+
+        }
+
+        private void txtBuscar_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            txtBuscar_TextChanged_1(sender, e);
+
         }
     }
 }

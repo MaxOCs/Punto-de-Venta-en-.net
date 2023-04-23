@@ -19,35 +19,30 @@ namespace CapaNegocio
             tabla = objetoCD.Mostrar();
             return tabla;
         }
-
-        public void InsertarRegistro(string CLIRFC, string NOMBRE_U, string DIRECCCION_U, string CORREOELECTRONICO_C, string CODIGOPOSTAL_U, string TELEFONO_C)
-        {
-            objetoCD.InsertarRegistro(Convert.ToInt32(CLIRFC), NOMBRE_U, DIRECCCION_U, CORREOELECTRONICO_C, Convert.ToDecimal(CODIGOPOSTAL_U), Convert.ToDecimal(TELEFONO_C));
-        }
-
-        public void EditarCliente(string DIRECCCION_U, string CORREOELECTRONICO_C, string CODIGOPOSTAL_U, string TELEFONO_C, string CLIRFC)
-        {
-            objetoCD.EditarRegistro(DIRECCCION_U, CORREOELECTRONICO_C, Convert.ToDecimal(CODIGOPOSTAL_U), Convert.ToDecimal(TELEFONO_C), Convert.ToInt32(CLIRFC));
-        }
-
-        public void EliminarCliente(string CLIRFC)
-        {
-            objetoCD.EliminarRegistro(Convert.ToInt32(CLIRFC));
-        }
-
-        public void ActualizarCliente(string CLIRFC, string NOMBRE_U, string DIRECCCION_U, string CORREOELECTRONICO_C, string CODIGOPOSTAL_U, string TELEFONO_C)
-        {
-            objetoCD.ActualizarCliente(Convert.ToInt32(CLIRFC), NOMBRE_U, DIRECCCION_U, CORREOELECTRONICO_C, Convert.ToDecimal(CODIGOPOSTAL_U), Convert.ToDecimal(TELEFONO_C));
-
-        }
-
-        public DataTable BuscarClienteNobre(string NOMBRE_U)
+        public DataTable MostrarRFC()
         {
             DataTable tabla = new DataTable();
-            tabla = objetoCD.BuscarClienteNombre(NOMBRE_U);
+            tabla = objetoCD.BuscarRFC();
             return tabla;
         }
+        public DataTable MostrarNombre()
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.BuscarNombre();
+            return tabla;
 
-
+        }
+        public void InsertarRegistro(string CLIRFC, string NOMBRE_U, string DIRECCCION_U, string CORREOELECTRONICO_C, string CODIGOPOSTAL_U, string TELEFONO_C)
+        {
+            objetoCD.InsertarRegistro(CLIRFC, NOMBRE_U, DIRECCCION_U, CORREOELECTRONICO_C, Convert.ToDecimal(CODIGOPOSTAL_U), Convert.ToDecimal(TELEFONO_C));
+        }
+        public void EliminarCliente(string CLIRFC)
+        {
+            objetoCD.EliminarRegistro(CLIRFC);
+        }
+        public void ActualizarCliente(string CLIRFC, string NOMBRE_U, string DIRECCCION_U, string CORREOELECTRONICO_C, string CODIGOPOSTAL_U, string TELEFONO_C)
+        {
+            objetoCD.ActualizarCliente(CLIRFC, NOMBRE_U, DIRECCCION_U, CORREOELECTRONICO_C, Convert.ToDecimal(CODIGOPOSTAL_U), Convert.ToDecimal(TELEFONO_C));
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaDatos;
+using PEscritorio.Vistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//este es el bueno 
 namespace PEscritorio
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        string Usuario;
+        string Tipo;
+        double Inicial = 0.0;
+
+        public Form1(string usuario, string tipo, double inicial)
         {
             InitializeComponent();
             rjDropdownMenu1.IsMainMenu = true;
             DMregistros.IsMainMenu = true;
+            Usuario = usuario;
+            Tipo = tipo;
+            Inicial = inicial;
+
         }
         private Form active = null;
         private void opening(Form child)
@@ -33,10 +43,6 @@ namespace PEscritorio
             child.Show();
 
         }
-        public void Desaparecer()
-        {
-
-        }
 
         private void BtnCatalogo_Click(object sender, EventArgs e)
         {
@@ -45,21 +51,21 @@ namespace PEscritorio
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            opening(new Ventas());
+            opening(new Ventas(Usuario));
             LBubicacion.Text = "VENTAS";
             panel12.BackgroundImage = Properties.Resources.VENTAS;
         }
 
         private void BtnCompras_Click(object sender, EventArgs e)
         {
-            opening(new Compras());
+            opening(new Compras(Usuario));
             LBubicacion.Text = "COMPRAS";
             panel12.BackgroundImage = Properties.Resources.COMPRAS;
         }
 
         private void BtnCorte_Click(object sender, EventArgs e)
         {
-            opening(new Corte());
+            opening(new Corte(Usuario, Inicial));
             LBubicacion.Text = "CORTE";
             panel12.BackgroundImage = Properties.Resources.CORTE;
         }
@@ -76,99 +82,10 @@ namespace PEscritorio
             DMregistros.Show(BtnRegistro,BtnRegistro.Width, 0);
         }
 
-        private void BtnCProvee_Click(object sender, EventArgs e)
-        {
-            CProveedores PantallaCProveedores = new CProveedores();
-            PantallaCProveedores.ShowDialog();
-        }
-
-        private void BtnRProvee_Click(object sender, EventArgs e)
-        {
-            RProveedor PantallaRProveerdor = new RProveedor();
-            PantallaRProveerdor.ShowDialog();
-        }
-
-        private void BtnCCompras_Click(object sender, EventArgs e)
-        {
-            CCompras PantallasCCompra = new CCompras();
-            PantallasCCompra.ShowDialog();
-        }
-
-        private void BtnCCorte_Click(object sender, EventArgs e)
-        {
-            CCorte PantallaCCorte = new CCorte();
-            PantallaCCorte.ShowDialog();
-        }
-
-        private void BtnCClie_Click(object sender, EventArgs e)
-        {
-            CClientes PantallaCClie = new CClientes();
-            PantallaCClie.ShowDialog();
-        }
-
-        private void BtnCUsuari_Click(object sender, EventArgs e)
-        {
-            CUsuarios PantallaCUsuari = new CUsuarios();
-            PantallaCUsuari.ShowDialog();
-        }
-
-        private void BtnRMateria_Click(object sender, EventArgs e)
-        {
-            RMateriales RMateria = new RMateriales();
-            RMateria.ShowDialog();
-        }
-
-        private void BtnRUsuar_Click(object sender, EventArgs e)
-        {
-            RUsuario PantallaRUsuario = new RUsuario();
-            PantallaRUsuario.ShowDialog();
-        }
-
-        private void BtnCBalance_Click(object sender, EventArgs e)
-        {
-            CBalance PantallaCBalance = new CBalance();
-            PantallaCBalance.ShowDialog();
-        }
-
-        private void BtnRPintura_Click(object sender, EventArgs e)
-        {
-            RPintura PantallaRPintura = new RPintura();
-            PantallaRPintura.ShowDialog();
-        }
-
-        private void BtnRClie_Click(object sender, EventArgs e)
-        {
-            RClientes PantallaRClie = new RClientes();
-            PantallaRClie.ShowDialog();
-        }
-
-        private void BtnCPintura_Click(object sender, EventArgs e)
-        {
-            CPintura CPintura = new CPintura();
-            CPintura.ShowDialog();
-        }
-
-        private void BtnCMaterias_Click(object sender, EventArgs e)
-        {
-            CMateriales CMateriales = new CMateriales();
-            CMateriales.ShowDialog();
-        }
-
-        private void BtnCVenta_Click(object sender, EventArgs e)
-        {
-            CVentas CVentas = new CVentas();
-            CVentas.ShowDialog();
-        }
-
         private void BtnReportes_Click(object sender, EventArgs e)
         {
             ReprtesVentas PantallaReprtesVentas = new ReprtesVentas();
             PantallaReprtesVentas.ShowDialog();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void rjDropdownMenu1_Opening(object sender, CancelEventArgs e)
@@ -260,17 +177,19 @@ namespace PEscritorio
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
+            lblUsuario.Text = Usuario;
 
-        }
-
-        private void BtnInventario_Click(object sender, EventArgs e)
-        {
-            
+            if (Tipo == "Empleado")
+            {
+                BtnRegistro.Visible = false;
+                BtnReportes.Visible = false;
+            }
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
         }
 
         private void cORTESToolStripMenuItem_Click(object sender, EventArgs e)
@@ -278,6 +197,56 @@ namespace PEscritorio
             opening(new CCorte());
             LBubicacion.Text = "CATALOGO CORTE";
             panel12.BackgroundImage = Properties.Resources.icons8_cortar_50;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnBalance_Click(object sender, EventArgs e)
+        {
+            opening(new Balance());
+            LBubicacion.Text = "CATALOGO BALANCE";
+        }
+
+        private void bALANCESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            opening(new CBalance());
+            LBubicacion.Text = "CATALOGO BALANCE";
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnCotizacion_Click(object sender, EventArgs e)
+        {
+            opening(new Cotizacion(Usuario));
+            LBubicacion.Text = "COTIZACION";
+        }
+
+        private void BtnFactura_Click_1(object sender, EventArgs e)
+        {
+            opening(new Factura());
+            LBubicacion.Text = "FACTURA";
+        }
+
+        private void BtnRegistro_Click_1(object sender, EventArgs e)
+        {
+            DMregistros.Show(BtnRegistro, BtnRegistro.Width, 0);
+        }
+
+        private void BtnBalance_Click_1(object sender, EventArgs e)
+        {
+            opening (new Balance());
+            LBubicacion.Text = "BALANCE";
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

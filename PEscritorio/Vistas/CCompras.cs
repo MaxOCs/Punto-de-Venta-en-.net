@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,17 +14,11 @@ namespace PEscritorio
     public partial class CCompras : Form
     {
         byte ce = 0, re = 0, ipm = 0;
+        CD_Compras objCompras = new CD_Compras();
         public CCompras()
         {
             InitializeComponent();
            
-        }
-
-        private void BtnCompras_Click(object sender, EventArgs e)
-        {
-            Compras PantallaCompras = new Compras();
-            this.Close();
-            PantallaCompras.ShowDialog();
         }
 
         private void BtnCatalogo_Click(object sender, EventArgs e)
@@ -37,14 +32,16 @@ namespace PEscritorio
 
         private void BtnCorte_Click(object sender, EventArgs e)
         {
-            Corte PantallaCorte = new Corte();
-            this.Close();
-            PantallaCorte.ShowDialog();
+           
         }
 
         private void BtnRegistro_Click(object sender, EventArgs e)
         {
             
+        }
+        private void MostrarCompras()
+        {
+            dgvCompras.DataSource = objCompras.Mostrar();
         }
 
 
@@ -170,11 +167,57 @@ namespace PEscritorio
 
         }
 
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CCompras_Load(object sender, EventArgs e)
+        {
+            MostrarCompras();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvCompras.CurrentCell = null;
+            string searchText = txtBuscar.Text;
+            if (!string.IsNullOrEmpty(searchText.ToLower()))
+            {
+                foreach (DataGridViewRow row in dgvCompras.Rows)
+                {
+                    string fac = row.Cells["CFACTURA"].Value.ToString().ToLower();
+                    string fecha = row.Cells["FECHA"].Value.ToString().ToLower();
+                    string total = row.Cells["TOTAL"].Value.ToString().ToLower();
+                    string pro = row.Cells["FKPRORFC"].Value.ToString().ToLower();
+                    string urfc = row.Cells["FKURFC"].Value.ToString().ToLower();
+
+                    if (fac.Contains(searchText) || fecha.Contains(searchText) || total.Contains(searchText) || pro.Contains(searchText) || urfc.Contains(searchText))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgvCompras.Rows)
+                {
+                    row.Visible = true;
+                }
+            }
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtBuscar_TextChanged(sender, e);
+        }
+
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            Ventas PantallaVentas = new Ventas();
-            this.Close();
-            PantallaVentas.ShowDialog();
+
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)

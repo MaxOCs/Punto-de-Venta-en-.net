@@ -34,7 +34,7 @@ namespace PEscritorio
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Hubo un error por: " + Ex);
+                MessageBox.Show("Hubo un error por: ");
             }
         }
 
@@ -73,7 +73,7 @@ namespace PEscritorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error por: " + ex);
+                MessageBox.Show("Hubo un error por: ");
             }
         }
 
@@ -88,7 +88,7 @@ namespace PEscritorio
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Hubo un error por: " + Ex);
+                MessageBox.Show("Hubo un error por: " );
             }
         }
 
@@ -103,7 +103,7 @@ namespace PEscritorio
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Hubo un error por: " + Ex);
+                MessageBox.Show("Hubo un error por: ");
             }
         }
         private void MostrarProveedor()
@@ -307,6 +307,14 @@ namespace PEscritorio
             if (txtCorElecp.Text == "Correo Electrónico")
             {
                 txtCorElecp.Clear();
+            }
+        }
+
+        private void txtTelp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

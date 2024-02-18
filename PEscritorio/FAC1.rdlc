@@ -6,27 +6,27 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.60054cm</Width>
+              <Width>3.44908cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60054cm</Width>
+              <Width>6.82967cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.34854cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60054cm</Width>
+              <Width>2.2972cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60054cm</Width>
+              <Width>2.10876cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60054cm</Width>
+              <Width>2.51986cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.90427cm</Height>
+              <Height>0.65292cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -211,7 +211,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.90427cm</Height>
+              <Height>0.65292cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -419,9 +419,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataFACTURA</DataSetName>
         <Top>11.17933cm</Top>
-        <Left>3.27766cm</Left>
-        <Height>1.80854cm</Height>
-        <Width>15.5027cm</Width>
+        <Left>0.12304cm</Left>
+        <Height>1.30583cm</Height>
+        <Width>20.5531cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1051,7 +1051,7 @@
         <Top>15.87183cm</Top>
         <Left>0.0762cm</Left>
         <Height>0cm</Height>
-        <Width>21.88748cm</Width>
+        <Width>20.95826cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -1074,7 +1074,7 @@
       <Line Name="Line2">
         <Top>2.06389cm</Top>
         <Height>0cm</Height>
-        <Width>21.96368cm</Width>
+        <Width>21.03446cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -1210,7 +1210,7 @@
     <Height>8.5in</Height>
     <Style />
   </Body>
-  <Width>8.68639in</Width>
+  <Width>8.32295in</Width>
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>

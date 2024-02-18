@@ -33,8 +33,7 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.Label label5;
             this.panel5 = new System.Windows.Forms.Panel();
             this.PCli = new System.Windows.Forms.Panel();
             this.BtnCMej = new System.Windows.Forms.Button();
@@ -60,12 +59,16 @@
             this.BtnVDi = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.pnlPROVE = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnPROV = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnCorte = new System.Windows.Forms.Button();
             this.BtnCatalogo = new System.Windows.Forms.Button();
@@ -82,6 +85,7 @@
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.PCli.SuspendLayout();
             this.panel20.SuspendLayout();
@@ -91,10 +95,11 @@
             this.panel11.SuspendLayout();
             this.PVen.SuspendLayout();
             this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.PanelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.pnlPROVE.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,17 +165,16 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.button8);
+            this.panel5.Controls.Add(this.pnlPROVE);
             this.panel5.Controls.Add(this.PCli);
             this.panel5.Controls.Add(this.PPint);
             this.panel5.Controls.Add(this.PMat);
             this.panel5.Controls.Add(this.PVen);
-            this.panel5.Controls.Add(this.chart1);
             this.panel5.Controls.Add(this.PanelMenu);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 64);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1054, 604);
+            this.panel5.Size = new System.Drawing.Size(1250, 657);
             this.panel5.TabIndex = 6;
             // 
             // PCli
@@ -179,9 +183,9 @@
             this.PCli.Controls.Add(this.BtnCMej);
             this.PCli.Controls.Add(this.panel20);
             this.PCli.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PCli.Location = new System.Drawing.Point(595, 0);
+            this.PCli.Location = new System.Drawing.Point(668, 0);
             this.PCli.Name = "PCli";
-            this.PCli.Size = new System.Drawing.Size(172, 604);
+            this.PCli.Size = new System.Drawing.Size(192, 657);
             this.PCli.TabIndex = 97;
             // 
             // BtnCMej
@@ -193,7 +197,7 @@
             this.BtnCMej.ForeColor = System.Drawing.Color.White;
             this.BtnCMej.Location = new System.Drawing.Point(0, 55);
             this.BtnCMej.Name = "BtnCMej";
-            this.BtnCMej.Size = new System.Drawing.Size(172, 55);
+            this.BtnCMej.Size = new System.Drawing.Size(192, 55);
             this.BtnCMej.TabIndex = 17;
             this.BtnCMej.Text = "MEJOR CLIENTE";
             this.BtnCMej.UseVisualStyleBackColor = true;
@@ -207,7 +211,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(0, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(172, 55);
+            this.panel20.Size = new System.Drawing.Size(192, 55);
             this.panel20.TabIndex = 2;
             // 
             // panel21
@@ -216,7 +220,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel21.Location = new System.Drawing.Point(0, 54);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(172, 1);
+            this.panel21.Size = new System.Drawing.Size(192, 1);
             this.panel21.TabIndex = 0;
             // 
             // PPint
@@ -227,9 +231,9 @@
             this.PPint.Controls.Add(this.BtnPMas);
             this.PPint.Controls.Add(this.panel15);
             this.PPint.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PPint.Location = new System.Drawing.Point(423, 0);
+            this.PPint.Location = new System.Drawing.Point(460, 0);
             this.PPint.Name = "PPint";
-            this.PPint.Size = new System.Drawing.Size(172, 604);
+            this.PPint.Size = new System.Drawing.Size(208, 657);
             this.PPint.TabIndex = 96;
             // 
             // BtnPTipo
@@ -241,7 +245,7 @@
             this.BtnPTipo.ForeColor = System.Drawing.Color.White;
             this.BtnPTipo.Location = new System.Drawing.Point(0, 165);
             this.BtnPTipo.Name = "BtnPTipo";
-            this.BtnPTipo.Size = new System.Drawing.Size(172, 55);
+            this.BtnPTipo.Size = new System.Drawing.Size(208, 55);
             this.BtnPTipo.TabIndex = 20;
             this.BtnPTipo.Text = "TIPO";
             this.BtnPTipo.UseVisualStyleBackColor = true;
@@ -256,7 +260,7 @@
             this.BtnPMar.ForeColor = System.Drawing.Color.White;
             this.BtnPMar.Location = new System.Drawing.Point(0, 110);
             this.BtnPMar.Name = "BtnPMar";
-            this.BtnPMar.Size = new System.Drawing.Size(172, 55);
+            this.BtnPMar.Size = new System.Drawing.Size(208, 55);
             this.BtnPMar.TabIndex = 18;
             this.BtnPMar.Text = "MARCA";
             this.BtnPMar.UseVisualStyleBackColor = true;
@@ -271,7 +275,7 @@
             this.BtnPMas.ForeColor = System.Drawing.Color.White;
             this.BtnPMas.Location = new System.Drawing.Point(0, 55);
             this.BtnPMas.Name = "BtnPMas";
-            this.BtnPMas.Size = new System.Drawing.Size(172, 55);
+            this.BtnPMas.Size = new System.Drawing.Size(208, 55);
             this.BtnPMas.TabIndex = 17;
             this.BtnPMas.Text = "MAS VENDIDA";
             this.BtnPMas.UseVisualStyleBackColor = true;
@@ -285,7 +289,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(172, 55);
+            this.panel15.Size = new System.Drawing.Size(208, 55);
             this.panel15.TabIndex = 2;
             // 
             // panel18
@@ -294,7 +298,7 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel18.Location = new System.Drawing.Point(0, 54);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(172, 1);
+            this.panel18.Size = new System.Drawing.Size(208, 1);
             this.panel18.TabIndex = 0;
             // 
             // PMat
@@ -306,9 +310,9 @@
             this.PMat.Controls.Add(this.BtnMMas);
             this.PMat.Controls.Add(this.panel11);
             this.PMat.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PMat.Location = new System.Drawing.Point(251, 0);
+            this.PMat.Location = new System.Drawing.Point(254, 0);
             this.PMat.Name = "PMat";
-            this.PMat.Size = new System.Drawing.Size(172, 604);
+            this.PMat.Size = new System.Drawing.Size(206, 657);
             this.PMat.TabIndex = 94;
             // 
             // button1
@@ -320,7 +324,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(0, 220);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 55);
+            this.button1.Size = new System.Drawing.Size(206, 55);
             this.button1.TabIndex = 20;
             this.button1.Text = "LIJAS";
             this.button1.UseVisualStyleBackColor = true;
@@ -335,7 +339,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(0, 165);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 55);
+            this.button2.Size = new System.Drawing.Size(206, 55);
             this.button2.TabIndex = 19;
             this.button2.Text = "TAPE";
             this.button2.UseVisualStyleBackColor = true;
@@ -350,7 +354,7 @@
             this.BtnMThi.ForeColor = System.Drawing.Color.White;
             this.BtnMThi.Location = new System.Drawing.Point(0, 110);
             this.BtnMThi.Name = "BtnMThi";
-            this.BtnMThi.Size = new System.Drawing.Size(172, 55);
+            this.BtnMThi.Size = new System.Drawing.Size(206, 55);
             this.BtnMThi.TabIndex = 18;
             this.BtnMThi.Text = "THINNER";
             this.BtnMThi.UseVisualStyleBackColor = true;
@@ -365,7 +369,7 @@
             this.BtnMMas.ForeColor = System.Drawing.Color.White;
             this.BtnMMas.Location = new System.Drawing.Point(0, 55);
             this.BtnMMas.Name = "BtnMMas";
-            this.BtnMMas.Size = new System.Drawing.Size(172, 55);
+            this.BtnMMas.Size = new System.Drawing.Size(206, 55);
             this.BtnMMas.TabIndex = 17;
             this.BtnMMas.Text = "MAS VENDIDO";
             this.BtnMMas.UseVisualStyleBackColor = true;
@@ -379,7 +383,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(172, 55);
+            this.panel11.Size = new System.Drawing.Size(206, 55);
             this.panel11.TabIndex = 2;
             // 
             // panel13
@@ -388,7 +392,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel13.Location = new System.Drawing.Point(0, 54);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(172, 1);
+            this.panel13.Size = new System.Drawing.Size(206, 1);
             this.panel13.TabIndex = 0;
             // 
             // PVen
@@ -402,7 +406,7 @@
             this.PVen.Dock = System.Windows.Forms.DockStyle.Left;
             this.PVen.Location = new System.Drawing.Point(79, 0);
             this.PVen.Name = "PVen";
-            this.PVen.Size = new System.Drawing.Size(172, 604);
+            this.PVen.Size = new System.Drawing.Size(175, 657);
             this.PVen.TabIndex = 93;
             // 
             // BtnVAn
@@ -414,7 +418,7 @@
             this.BtnVAn.ForeColor = System.Drawing.Color.White;
             this.BtnVAn.Location = new System.Drawing.Point(0, 220);
             this.BtnVAn.Name = "BtnVAn";
-            this.BtnVAn.Size = new System.Drawing.Size(172, 55);
+            this.BtnVAn.Size = new System.Drawing.Size(175, 55);
             this.BtnVAn.TabIndex = 20;
             this.BtnVAn.Text = "ANUAL";
             this.BtnVAn.UseVisualStyleBackColor = true;
@@ -429,7 +433,7 @@
             this.BtnVMe.ForeColor = System.Drawing.Color.White;
             this.BtnVMe.Location = new System.Drawing.Point(0, 165);
             this.BtnVMe.Name = "BtnVMe";
-            this.BtnVMe.Size = new System.Drawing.Size(172, 55);
+            this.BtnVMe.Size = new System.Drawing.Size(175, 55);
             this.BtnVMe.TabIndex = 19;
             this.BtnVMe.Text = "MENSUAL";
             this.BtnVMe.UseVisualStyleBackColor = true;
@@ -444,7 +448,7 @@
             this.BtnVSe.ForeColor = System.Drawing.Color.White;
             this.BtnVSe.Location = new System.Drawing.Point(0, 110);
             this.BtnVSe.Name = "BtnVSe";
-            this.BtnVSe.Size = new System.Drawing.Size(172, 55);
+            this.BtnVSe.Size = new System.Drawing.Size(175, 55);
             this.BtnVSe.TabIndex = 18;
             this.BtnVSe.Text = "SEMANAL";
             this.BtnVSe.UseVisualStyleBackColor = true;
@@ -459,7 +463,7 @@
             this.BtnVDi.ForeColor = System.Drawing.Color.White;
             this.BtnVDi.Location = new System.Drawing.Point(0, 55);
             this.BtnVDi.Name = "BtnVDi";
-            this.BtnVDi.Size = new System.Drawing.Size(172, 55);
+            this.BtnVDi.Size = new System.Drawing.Size(175, 55);
             this.BtnVDi.TabIndex = 17;
             this.BtnVDi.Text = "DIARIO";
             this.BtnVDi.UseVisualStyleBackColor = true;
@@ -473,7 +477,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(172, 55);
+            this.panel16.Size = new System.Drawing.Size(175, 55);
             this.panel16.TabIndex = 2;
             // 
             // panel17
@@ -482,25 +486,13 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel17.Location = new System.Drawing.Point(0, 54);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(172, 1);
+            this.panel17.Size = new System.Drawing.Size(175, 1);
             this.panel17.TabIndex = 0;
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(251, 61);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            this.chart1.Size = new System.Drawing.Size(678, 389);
-            this.chart1.TabIndex = 92;
-            this.chart1.Text = "chart2";
             // 
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.PanelMenu.Controls.Add(this.btnPROV);
             this.PanelMenu.Controls.Add(this.BtnSalir);
             this.PanelMenu.Controls.Add(this.BtnCorte);
             this.PanelMenu.Controls.Add(this.BtnCatalogo);
@@ -513,7 +505,7 @@
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(79, 604);
+            this.PanelMenu.Size = new System.Drawing.Size(79, 657);
             this.PanelMenu.TabIndex = 0;
             // 
             // panel4
@@ -524,7 +516,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1054, 64);
+            this.panel4.Size = new System.Drawing.Size(1250, 64);
             this.panel4.TabIndex = 5;
             // 
             // panel10
@@ -548,22 +540,92 @@
             this.panel9.Size = new System.Drawing.Size(79, 64);
             this.panel9.TabIndex = 0;
             // 
-            // button8
+            // pnlPROVE
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(91)))), ((int)(((byte)(148)))));
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = global::PEscritorio.Properties.Resources.icons8_imprimir_50;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(773, 479);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(156, 55);
-            this.button8.TabIndex = 98;
-            this.button8.Text = "Imprimir";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = false;
+            this.pnlPROVE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(91)))), ((int)(((byte)(148)))));
+            this.pnlPROVE.Controls.Add(this.button4);
+            this.pnlPROVE.Controls.Add(this.button3);
+            this.pnlPROVE.Controls.Add(this.panel14);
+            this.pnlPROVE.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPROVE.Location = new System.Drawing.Point(860, 0);
+            this.pnlPROVE.Name = "pnlPROVE";
+            this.pnlPROVE.Size = new System.Drawing.Size(192, 657);
+            this.pnlPROVE.TabIndex = 98;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(0, 55);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(192, 78);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "PRODUCTO MAS VENDIDO";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel14.Controls.Add(label5);
+            this.panel14.Controls.Add(this.panel19);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(192, 55);
+            this.panel14.TabIndex = 2;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label5.Location = new System.Drawing.Point(45, 17);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(114, 20);
+            label5.TabIndex = 65;
+            label5.Text = "PROVEDOR ";
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.White;
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel19.Location = new System.Drawing.Point(0, 54);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(192, 1);
+            this.panel19.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(0, 133);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(192, 101);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "PROVERDOR AL QUE MAS LE COMPRAMOS";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnPROV
+            // 
+            this.btnPROV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPROV.FlatAppearance.BorderSize = 0;
+            this.btnPROV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPROV.Image = global::PEscritorio.Properties.Resources.icons8_proveedor_50;
+            this.btnPROV.Location = new System.Drawing.Point(0, 300);
+            this.btnPROV.Name = "btnPROV";
+            this.btnPROV.Size = new System.Drawing.Size(79, 75);
+            this.btnPROV.TabIndex = 21;
+            this.btnPROV.UseVisualStyleBackColor = true;
+            this.btnPROV.Click += new System.EventHandler(this.btnPROV_Click);
             // 
             // BtnSalir
             // 
@@ -571,7 +633,7 @@
             this.BtnSalir.FlatAppearance.BorderSize = 0;
             this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalir.Image = global::PEscritorio.Properties.Resources.SALIR;
-            this.BtnSalir.Location = new System.Drawing.Point(0, 529);
+            this.BtnSalir.Location = new System.Drawing.Point(0, 582);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(79, 75);
             this.BtnSalir.TabIndex = 20;
@@ -696,12 +758,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(166)))), ((int)(((byte)(175)))));
-            this.ClientSize = new System.Drawing.Size(1054, 668);
+            this.ClientSize = new System.Drawing.Size(1250, 721);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Name = "ReprtesVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReprtesVentas";
+            this.Load += new System.EventHandler(this.ReprtesVentas_Load);
             this.panel5.ResumeLayout(false);
             this.PCli.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
@@ -715,11 +778,13 @@
             this.PVen.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.PanelMenu.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.pnlPROVE.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -743,7 +808,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel PVen;
         private System.Windows.Forms.Button BtnVAn;
         private System.Windows.Forms.Button BtnVMe;
@@ -768,6 +832,11 @@
         private System.Windows.Forms.Button BtnCMej;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel pnlPROVE;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Button btnPROV;
     }
 }

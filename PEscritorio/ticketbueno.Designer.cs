@@ -30,12 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tICKETBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bDPinturaJuarezDataSet = new PEscritorio.BDPinturaJuarezDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tICKETTableAdapter = new PEscritorio.BDPinturaJuarezDataSetTableAdapters.TICKETTableAdapter();
+            this.bDPinturaJuarezDataSet1 = new PEscritorio.BDPinturaJuarezDataSet1();
+            this.cAMBIOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cAMBIOTableAdapter = new PEscritorio.BDPinturaJuarezDataSet1TableAdapters.CAMBIOTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tICKETBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDPinturaJuarezDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDPinturaJuarezDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cAMBIOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tICKETBindingSource
@@ -54,7 +60,10 @@
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.tICKETBindingSource;
+            reportDataSource2.Name = "PAGO";
+            reportDataSource2.Value = this.cAMBIOBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PEscritorio.TICK1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -65,6 +74,20 @@
             // tICKETTableAdapter
             // 
             this.tICKETTableAdapter.ClearBeforeFill = true;
+            // 
+            // bDPinturaJuarezDataSet1
+            // 
+            this.bDPinturaJuarezDataSet1.DataSetName = "BDPinturaJuarezDataSet1";
+            this.bDPinturaJuarezDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cAMBIOBindingSource
+            // 
+            this.cAMBIOBindingSource.DataMember = "CAMBIO";
+            this.cAMBIOBindingSource.DataSource = this.bDPinturaJuarezDataSet1;
+            // 
+            // cAMBIOTableAdapter
+            // 
+            this.cAMBIOTableAdapter.ClearBeforeFill = true;
             // 
             // ticketbueno
             // 
@@ -77,6 +100,8 @@
             this.Load += new System.EventHandler(this.ticketbueno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tICKETBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDPinturaJuarezDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDPinturaJuarezDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cAMBIOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -87,5 +112,8 @@
         private System.Windows.Forms.BindingSource tICKETBindingSource;
         private BDPinturaJuarezDataSet bDPinturaJuarezDataSet;
         private BDPinturaJuarezDataSetTableAdapters.TICKETTableAdapter tICKETTableAdapter;
+        private System.Windows.Forms.BindingSource cAMBIOBindingSource;
+        private BDPinturaJuarezDataSet1 bDPinturaJuarezDataSet1;
+        private BDPinturaJuarezDataSet1TableAdapters.CAMBIOTableAdapter cAMBIOTableAdapter;
     }
 }

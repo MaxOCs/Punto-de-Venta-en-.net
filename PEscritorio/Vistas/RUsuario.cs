@@ -116,7 +116,7 @@ namespace PEscritorio
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Hubo un error por: " + Ex);
+                MessageBox.Show("Hubo al eliminar");
             }
         }
 
@@ -145,7 +145,7 @@ namespace PEscritorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo insertar los datos por: " + ex);
+                MessageBox.Show("No se pudo insertar los datos");
             }
         }
 
@@ -359,6 +359,14 @@ namespace PEscritorio
             if (txtRespueta.Text == "Respuesta")
             {
                 txtRespueta.Clear();
+            }
+        }
+
+        private void txtCodigoPostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -85,6 +85,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDPinturaJuarezDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BDPinturaJuarezDataSet1.cs">
+      <DependentUpon>BDPinturaJuarezDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BDPinturaJuarezDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -249,11 +252,23 @@
     <Compile Include="MenuRenderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\FR_MATMASV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FR_MATMASV.Designer.cs">
+      <DependentUpon>FR_MATMASV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\F_CORTE.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\F_CORTE.Designer.cs">
       <DependentUpon>F_CORTE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\PRUEBA20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\PRUEBA20.Designer.cs">
+      <DependentUpon>PRUEBA20.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\RClientes.cs">
       <SubType>Form</SubType>
@@ -287,6 +302,78 @@
     </Compile>
     <Compile Include="Vistas\RProveedor.Designer.cs">
       <DependentUpon>RProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_LIJAMASVEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_LIJAMASVEN.Designer.cs">
+      <DependentUpon>RP_LIJAMASVEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_MCLIENTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_MCLIENTE.Designer.cs">
+      <DependentUpon>RP_MCLIENTE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_MENSUALV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_MENSUALV.Designer.cs">
+      <DependentUpon>RP_MENSUALV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_MERCPROVM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_MERCPROVM.Designer.cs">
+      <DependentUpon>RP_MERCPROVM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_PINMARCA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_PINMARCA.Designer.cs">
+      <DependentUpon>RP_PINMARCA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_PINTURAMASV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_PINTURAMASV.Designer.cs">
+      <DependentUpon>RP_PINTURAMASV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_PROVMASCOMPRADO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_PROVMASCOMPRADO.Designer.cs">
+      <DependentUpon>RP_PROVMASCOMPRADO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_TAPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_TAPE.Designer.cs">
+      <DependentUpon>RP_TAPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_THINER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_THINER.Designer.cs">
+      <DependentUpon>RP_THINER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_TIPOPMV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_TIPOPMV.Designer.cs">
+      <DependentUpon>RP_TIPOPMV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_VENANUAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_VENANUAL.Designer.cs">
+      <DependentUpon>RP_VENANUAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RP_VENTASDIARIAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RP_VENTASDIARIAS.Designer.cs">
+      <DependentUpon>RP_VENTASDIARIAS.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\RUsuario.cs">
       <SubType>Form</SubType>
@@ -390,12 +477,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\FR_MATMASV.resx">
+      <DependentUpon>FR_MATMASV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\F_CORTE.resx">
       <DependentUpon>F_CORTE.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\MEJORCLIEN.rdlc" />
+    <EmbeddedResource Include="Vistas\PINTURAMASV.rdlc" />
+    <EmbeddedResource Include="Vistas\PRUEBA20.resx">
+      <DependentUpon>PRUEBA20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\PR_PROVMASCOMPRA.rdlc" />
     <EmbeddedResource Include="Vistas\RClientes.resx">
       <DependentUpon>RClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Report1.rdlc" />
+    <EmbeddedResource Include="Vistas\Report2.rdlc" />
     <EmbeddedResource Include="Vistas\ReprtesVentas.resx">
       <DependentUpon>ReprtesVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -407,6 +505,51 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\RProveedor.resx">
       <DependentUpon>RProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_LIJA.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_LIJAMASVEN.resx">
+      <DependentUpon>RP_LIJAMASVEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_MARCAP.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_MCLIENTE.resx">
+      <DependentUpon>RP_MCLIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_MENSUAL.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_MENSUALV.resx">
+      <DependentUpon>RP_MENSUALV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_MERCPROV.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_MERCPROVM.resx">
+      <DependentUpon>RP_MERCPROVM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_PINMARCA.resx">
+      <DependentUpon>RP_PINMARCA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_PINTURAMASV.resx">
+      <DependentUpon>RP_PINTURAMASV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_PROVMASCOMPRADO.resx">
+      <DependentUpon>RP_PROVMASCOMPRADO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_SEMANAL.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_TAPE.resx">
+      <DependentUpon>RP_TAPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_TAPErdlc.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_THINER.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_THINER.resx">
+      <DependentUpon>RP_THINER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_TIPOPMV.resx">
+      <DependentUpon>RP_TIPOPMV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_VDIA.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_VENANUAL.resx">
+      <DependentUpon>RP_VENANUAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RP_VENTAANUAL.rdlc" />
+    <EmbeddedResource Include="Vistas\RP_VENTASDIARIAS.resx">
+      <DependentUpon>RP_VENTASDIARIAS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\RUsuario.resx">
       <DependentUpon>RUsuario.cs</DependentUpon>

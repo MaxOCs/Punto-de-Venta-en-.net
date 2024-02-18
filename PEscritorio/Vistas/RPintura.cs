@@ -67,8 +67,6 @@ namespace PEscritorio
                 objPinturas.EliminarMaterial(txtCodigo.Text);
                 MessageBox.Show("Se elimino correctamente");
                 LimpiarTxt();
-
-
             }
             catch (Exception Ex)
             {
@@ -130,11 +128,6 @@ namespace PEscritorio
             {
                 MessageBox.Show("Hubo un error por: " + ex);
             }            
-        }
-
-        private void txtPrecio_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void panel15_Paint(object sender, PaintEventArgs e)
@@ -230,29 +223,6 @@ namespace PEscritorio
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-        }
-
-        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir solo dígitos, la tecla de retroceso (backspace) y la tecla de suprimir (delete)
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // Indicar que el evento fue manejado y no se necesita más procesamiento
-            }
-        }
-
-        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // Permitir solo un punto decimal
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)

@@ -204,7 +204,7 @@
             this.Pbusqueda.Controls.Add(this.button5);
             this.Pbusqueda.Controls.Add(this.txtBuscar);
             this.Pbusqueda.Controls.Add(this.dgvBuscarUsuario);
-            this.Pbusqueda.Location = new System.Drawing.Point(565, 346);
+            this.Pbusqueda.Location = new System.Drawing.Point(620, 378);
             this.Pbusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.Pbusqueda.Name = "Pbusqueda";
             this.Pbusqueda.Size = new System.Drawing.Size(645, 274);
@@ -507,6 +507,7 @@
             this.txtRespueta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRespueta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRespueta.Location = new System.Drawing.Point(996, 657);
+            this.txtRespueta.MaxLength = 20;
             this.txtRespueta.Multiline = true;
             this.txtRespueta.Name = "txtRespueta";
             this.txtRespueta.Size = new System.Drawing.Size(526, 49);
@@ -552,6 +553,7 @@
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(996, 586);
+            this.txtContraseña.MaxLength = 15;
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
@@ -564,6 +566,7 @@
             // 
             this.txtCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCiudad.Location = new System.Drawing.Point(996, 455);
+            this.txtCiudad.MaxLength = 20;
             this.txtCiudad.Multiline = true;
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(526, 49);
@@ -575,17 +578,20 @@
             // 
             this.txtCodigoPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoPostal.Location = new System.Drawing.Point(996, 385);
+            this.txtCodigoPostal.MaxLength = 6;
             this.txtCodigoPostal.Multiline = true;
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.Size = new System.Drawing.Size(526, 49);
             this.txtCodigoPostal.TabIndex = 24;
             this.txtCodigoPostal.Text = "Código postal";
             this.txtCodigoPostal.Click += new System.EventHandler(this.txtCodigoPostal_Click);
+            this.txtCodigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoPostal_KeyPress);
             // 
             // txtRFC
             // 
             this.txtRFC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRFC.Location = new System.Drawing.Point(996, 322);
+            this.txtRFC.MaxLength = 13;
             this.txtRFC.Multiline = true;
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.Size = new System.Drawing.Size(526, 49);
@@ -598,6 +604,7 @@
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(330, 520);
+            this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(526, 49);
@@ -609,10 +616,11 @@
             // 
             this.txtCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurp.Location = new System.Drawing.Point(330, 453);
+            this.txtCurp.MaxLength = 15;
             this.txtCurp.Multiline = true;
             this.txtCurp.Name = "txtCurp";
             this.txtCurp.Size = new System.Drawing.Size(526, 49);
-            this.txtCurp.TabIndex = 20;
+            this.txtCurp.TabIndex = 30;
             this.txtCurp.Text = "CURP";
             this.txtCurp.Click += new System.EventHandler(this.txtCurp_Click);
             // 
@@ -620,6 +628,7 @@
             // 
             this.txtDirección.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDirección.Location = new System.Drawing.Point(330, 386);
+            this.txtDirección.MaxLength = 30;
             this.txtDirección.Multiline = true;
             this.txtDirección.Name = "txtDirección";
             this.txtDirección.Size = new System.Drawing.Size(526, 49);
@@ -631,6 +640,7 @@
             // 
             this.txtNobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNobre.Location = new System.Drawing.Point(330, 319);
+            this.txtNobre.MaxLength = 30;
             this.txtNobre.Multiline = true;
             this.txtNobre.Name = "txtNobre";
             this.txtNobre.Size = new System.Drawing.Size(526, 49);

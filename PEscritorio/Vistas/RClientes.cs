@@ -34,11 +34,9 @@ namespace PEscritorio
                 objetoCNCliente.InsertarRegistro(txtRFC.Text, txtNombre.Text, txtDireccion.Text, txtCorreo.Text, txtCodigoPostal.Text, txtTelefono.Text);
                 MessageBox.Show("Se inserto correctamente");
                 Limpiar();
-
             }
-            catch (Exception Ex)
+            catch 
             {
-
                 MessageBox.Show("Hubo un error");
             }
         }
@@ -231,6 +229,22 @@ namespace PEscritorio
             if (txtTelefono.Text == "Telefono")
             {
                 txtTelefono.Clear();
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCodigoPostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -165,8 +165,8 @@
             this.Pbusqueda.Controls.Add(this.button8);
             this.Pbusqueda.Controls.Add(this.txtBuscar);
             this.Pbusqueda.Controls.Add(this.DGVProvee);
-            this.Pbusqueda.Location = new System.Drawing.Point(574, 314);
-            this.Pbusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pbusqueda.Location = new System.Drawing.Point(543, 343);
+            this.Pbusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.Pbusqueda.Name = "Pbusqueda";
             this.Pbusqueda.Size = new System.Drawing.Size(645, 274);
             this.Pbusqueda.TabIndex = 113;
@@ -443,7 +443,7 @@
             // 
             this.txtTelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelp.Location = new System.Drawing.Point(680, 549);
-            this.txtTelp.MaxLength = 15;
+            this.txtTelp.MaxLength = 10;
             this.txtTelp.Multiline = true;
             this.txtTelp.Name = "txtTelp";
             this.txtTelp.Size = new System.Drawing.Size(480, 49);
@@ -451,6 +451,7 @@
             this.txtTelp.Text = "Telefono";
             this.txtTelp.Click += new System.EventHandler(this.txtTelp_Click);
             this.txtTelp.TextChanged += new System.EventHandler(this.txtTelp_TextChanged);
+            this.txtTelp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelp_KeyPress);
             // 
             // pictureBox13
             // 

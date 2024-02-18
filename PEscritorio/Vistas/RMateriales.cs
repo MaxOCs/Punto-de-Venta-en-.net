@@ -328,7 +328,6 @@ namespace PEscritorio
             {
                 e.Handled = true;
             }
-
             // Permitir solo un punto decimal
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {

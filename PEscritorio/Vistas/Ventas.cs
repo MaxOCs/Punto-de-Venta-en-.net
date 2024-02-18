@@ -31,6 +31,7 @@ namespace PEscritorio
         {
             Usu= usuario;
             InitializeComponent();
+            DTPVentas.Value=DateTime.Now;
             CBBusMer.SelectedIndex = 0;
             txtCantidad.Text = "1";
             lbNoventa.Text = "0";
@@ -100,82 +101,78 @@ namespace PEscritorio
             NumeroFAC++; 
             try
             {
-                if(txtCambio.Text != "" && LabTot.Text != "$0.00")
+                decimal va = decimal.Parse(txtCambio.Text);
+                decimal lida=decimal.Parse(LabTot.Text);
+                if (lida < va)
                 {
-                    objetoVentas.InsertarRegistro(Numerodeventa, DTPVentas.Value, Decimal.Parse(LabTot.Text), lbRFCU.Text, lbNoventa.Text);
-                    MessageBox.Show("Se inserto correctamente");
-                    //metodo que recorre los datos 
-                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    if (txtCambio.Text != "" && LabTot.Text != "$0.00")
                     {
-
-                        for (int c = 0; c < dataGridView1.ColumnCount; c++)
+                        objetoVentas.InsertarRegistro(Numerodeventa, DTPVentas.Value, Decimal.Parse(LabTot.Text), lbRFCU.Text, lbNoventa.Text);
+                        //MessageBox.Show("Se inserto correctamente");
+                        //metodo que recorre los datos 
+                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                         {
 
-                            string DATOCODIGO = dataGridView1[c, i].Value.ToString();
-                            //MessageBox.Show(DATOCODIGO.ToString());
-                            if (c == 0)
+                            for (int c = 0; c < dataGridView1.ColumnCount; c++)
                             {
-                                txtCod.Text = DATOCODIGO;
-                            }
-                            if (c == 2)
-                            {
-                                lbPRESUNI.Text = DATOCODIGO;
-                            }
-                            if (c == 3)
-                            {
-                                txtCantidad.Text = DATOCODIGO;
-                            }
-                            if (c == 4)
-                            {
-                                txtPrec.Text = DATOCODIGO;
-                            }
 
-
+                                string DATOCODIGO = dataGridView1[c, i].Value.ToString();
+                                if (c == 0)
+                                {
+                                    txtCod.Text = DATOCODIGO;
+                                }
+                                if (c == 2)
+                                {
+                                    lbPRESUNI.Text = DATOCODIGO;
+                                }
+                                if (c == 3)
+                                {
+                                    txtCantidad.Text = DATOCODIGO;
+                                }
+                                if (c == 4)
+                                {
+                                    txtPrec.Text = DATOCODIGO;
+                                }
+                            }
+                            int Can = int.Parse(txtCantidad.Text);
+                            decimal pre = Convert.ToDecimal(lbPRESUNI.Text);
+                            decimal Tot = pre * Can;
+                            decimal Codigo = Convert.ToDecimal(txtCod.Text);
+                            string Marca = txtMarca.Text;
+                            string Produccto = txtProd.Text;
+                            string Unidad = txtUnida.Text;
+                            newFactura.ventasretiran(Numerodeventa, Codigo, pre, Can, Tot);
                         }
-                        int Can = int.Parse(txtCantidad.Text);
-                        decimal pre = Convert.ToDecimal(lbPRESUNI.Text);
-                        decimal Tot = pre * Can;
-                        decimal Codigo = Convert.ToDecimal(txtCod.Text);
-                        string Marca = txtMarca.Text;
-                        string Produccto = txtProd.Text;
-                        string Unidad = txtUnida.Text;
-                        MessageBox.Show("los datos a añadir son" + Codigo + pre + Can + Tot);
-                        newFactura.ventasretiran(Numerodeventa, Codigo, pre, Can, Tot);
-
+                        camb = (float.Parse(txtCambio.Text) - float.Parse(LabTot.Text));
+                        Labcambio.Text = camb.ToString("F2");
+                        objetoVentas.InsertarPago(Numerodeventa, decimal.Parse(txtCambio.Text), decimal.Parse(Labcambio.Text));
+                        newFactura.FacturaVenta(NumeroFAC, Numerodeventa);
+                        LBnoVnta.Text = Numerodeventa.ToString();
+                        //esto es lo que iba hasta abajo
+                        ticketbueno reporteTicket = new ticketbueno(Numerodeventa);
+                        Numerodeventa++;
+                        NumeroFAC++;
+                        reporteTicket.ShowDialog();
+                        dataGridView1.Rows.Clear();
+                        Monto = 0;
+                        txtCambio.Text = "";
+                        lbFactura.Text = NumeroFAC.ToString();
                     }
-                    camb = (float.Parse(txtCambio.Text) - float.Parse(LabTot.Text));
-                    Labcambio.Text = camb.ToString("F2");
-                    newFactura.FacturaVenta(NumeroFAC, Numerodeventa);
-                    MessageBox.Show("Ya se relaciono con una factura");
-                    LBnoVnta.Text = Numerodeventa.ToString();
-
-                    //esto es lo que iba hasta abajo
-
-                    ticketbueno reporteTicket = new ticketbueno(Numerodeventa);
-                    Numerodeventa++;
-                    NumeroFAC++;
-                    reporteTicket.ShowDialog();
-                    dataGridView1.Rows.Clear();
-                    Monto = 0;
-                    txtCambio.Text = "";
-                    lbFactura.Text = NumeroFAC.ToString();
+                    else
+                    {
+                        MessageBox.Show("Selecciona minimo un articulo");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Selecciona minimo un articulo");
+                    MessageBox.Show("Faltan : $" + (lida-va) + " Pesos");
+                    txtCambio.Focus();
                 }
-              
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Hubo un error, verifique información"+Ex);
+                MessageBox.Show("Hubo un error, verifique información");
             }
-            //ticketbueno reporteTicket = new ticketbueno(Numerodeventa);
-            //Numerodeventa++;
-            //NumeroFAC++;
-            //reporteTicket.ShowDialog();
-            //camb =(float.Parse(txtCambio.Text)- float.Parse(LabTot.Text));
-            //Labcambio.Text=camb.ToString("F2");
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -493,7 +490,7 @@ namespace PEscritorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error por: " + ex);
+                MessageBox.Show("Hubo un error por: ");
             }
         }
         //BUSCAR RFC DEL CLIENTE
@@ -520,7 +517,7 @@ namespace PEscritorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error por: " + ex);
+                MessageBox.Show("Hubo un error por: ");
             }
         }
 
@@ -624,74 +621,120 @@ namespace PEscritorio
             NumeroFAC++;
             try
             {
-                if (txtCambio.Text != "" && LabTot.Text != "$0.00")
+                decimal va = decimal.Parse(txtCambio.Text);
+                decimal lida = decimal.Parse(LabTot.Text);
+                if (lida < va)
                 {
-                    objetoVentas.InsertarRegistro(Numerodeventa, DTPVentas.Value, Decimal.Parse(LabTot.Text), lbRFCU.Text, lbNoventa.Text);
- 
-                    //metodo que recorre los datos 
-                    for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+                    if (txtCambio.Text != "" && LabTot.Text != "$0.00")
                     {
+                        objetoVentas.InsertarRegistro(Numerodeventa, DTPVentas.Value, Decimal.Parse(LabTot.Text), lbRFCU.Text, lbNoventa.Text);
 
-                        for (int c = 0; c < dataGridView2.ColumnCount; c++)
+                        //metodo que recorre los datos 
+                        for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
                         {
 
-                            string DATOCODIGO = dataGridView2[c, i].Value.ToString();
-                            //MessageBox.Show(DATOCODIGO.ToString());
-                            if (c == 0)
+                            for (int c = 0; c < dataGridView2.ColumnCount; c++)
                             {
-                                txtCod.Text = DATOCODIGO;
-                            }
-                            if (c == 2)
-                            {
-                                lbPRESUNI.Text = DATOCODIGO;
-                            }
-                            if (c == 3)
-                            {
-                                txtCantidad.Text = DATOCODIGO;
-                            }
-                            if (c == 4)
-                            {
-                                txtPrec.Text = DATOCODIGO;
-                            }
 
+                                string DATOCODIGO = dataGridView2[c, i].Value.ToString();
+                                //MessageBox.Show(DATOCODIGO.ToString());
+                                if (c == 0)
+                                {
+                                    txtCod.Text = DATOCODIGO;
+                                }
+                                if (c == 2)
+                                {
+                                    lbPRESUNI.Text = DATOCODIGO;
+                                }
+                                if (c == 3)
+                                {
+                                    txtCantidad.Text = DATOCODIGO;
+                                }
+                                if (c == 4)
+                                {
+                                    txtPrec.Text = DATOCODIGO;
+                                }
+
+
+                            }
+                            int Can = int.Parse(txtCantidad.Text);
+                            decimal pre = Convert.ToDecimal(lbPRESUNI.Text);
+                            decimal Tot = pre * Can;
+                            decimal Codigo = Convert.ToDecimal(txtCod.Text);
+                            string Marca = txtMarca.Text;
+                            string Produccto = txtProd.Text;
+                            string Unidad = txtUnida.Text;
+                            //MessageBox.Show("los datos a añadir son" + Codigo + pre + Can + Tot);
+                            newFactura.ventasretiran(Numerodeventa, Codigo, pre, Can, Tot);
 
                         }
-                        int Can = int.Parse(txtCantidad.Text);
-                        decimal pre = Convert.ToDecimal(lbPRESUNI.Text);
-                        decimal Tot = pre * Can;
-                        decimal Codigo = Convert.ToDecimal(txtCod.Text);
-                        string Marca = txtMarca.Text;
-                        string Produccto = txtProd.Text;
-                        string Unidad = txtUnida.Text;
-                        //MessageBox.Show("los datos a añadir son" + Codigo + pre + Can + Tot);
-                        newFactura.ventasretiran(Numerodeventa, Codigo, pre, Can, Tot);
+                        camb = (float.Parse(txtCambio.Text) - float.Parse(LabTot.Text));
+                        Labcambio.Text = camb.ToString("F2");
+                        newFactura.FacturaVenta(NumeroFAC, Numerodeventa);
+                        objetoVentas.InsertarPago(Numerodeventa, decimal.Parse(txtCambio.Text), decimal.Parse(Labcambio.Text));
+                        //MessageBox.Show("Ya se relaciono con una factura");
+                        LBnoVnta.Text = Numerodeventa.ToString();
+                        //esto es lo que iba hasta abajo
 
+                        ticketbueno reporteTicket = new ticketbueno(Numerodeventa);
+                        Numerodeventa++;
+                        NumeroFAC++;
+                        reporteTicket.ShowDialog();
+                        Monto = 0;
+                        txtCambio.Text = "";
+                        lbFactura.Text = NumeroFAC.ToString();
                     }
-                    camb = (float.Parse(txtCambio.Text) - float.Parse(LabTot.Text));
-                    Labcambio.Text = camb.ToString("F2");
-                    newFactura.FacturaVenta(NumeroFAC, Numerodeventa);
-                    //MessageBox.Show("Ya se relaciono con una factura");
-                    LBnoVnta.Text = Numerodeventa.ToString();
-                    //esto es lo que iba hasta abajo
-
-                    ticketbueno reporteTicket = new ticketbueno(Numerodeventa);
-                    Numerodeventa++;
-                    NumeroFAC++;
-                    reporteTicket.ShowDialog();
-                    Monto = 0;
-                    txtCambio.Text = "";
-                    lbFactura.Text = NumeroFAC.ToString();
+                    else
+                    {
+                        MessageBox.Show("Selecciona minimo un articulo");
+                    }
+                    btnCoCotizar.Visible = false;
+                    dataGridView2.Visible = false;
                 }
                 else
                 {
-                    MessageBox.Show("Selecciona minimo un articulo");
+                    MessageBox.Show("Faltan : $" + (lida-va) + " Pesos");
+                    txtCambio.Focus();
                 }
-                btnCoCotizar.Visible = false;
-                dataGridView2.Visible = false;
+                    
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Hubo un error, verifique información" + Ex);
+                MessageBox.Show("Hubo un error, verifique información");
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // Permitir solo un punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCambio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // Permitir solo un punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

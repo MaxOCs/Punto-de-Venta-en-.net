@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.30395cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>5.76124cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.30395cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.82228cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.30395cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -355,9 +355,8 @@
         </TablixRowHierarchy>
         <DataSetName>compradoc</DataSetName>
         <Top>8.38412cm</Top>
-        <Left>2.39571cm</Left>
         <Height>1.2cm</Height>
-        <Width>12.5cm</Width>
+        <Width>17.49536cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -975,7 +974,7 @@
     <Height>8.42247in</Height>
     <Style />
   </Body>
-  <Width>6.50384in</Width>
+  <Width>6.91919in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

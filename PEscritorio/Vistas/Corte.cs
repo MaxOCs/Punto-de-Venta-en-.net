@@ -86,7 +86,6 @@ namespace PEscritorio
             {
                 lblfactura.Text = leer4["FAC"].ToString();
             }
-            MessageBox.Show(fa.ToString());
             conexion4.CerrarConexion();
             dataGridView1.DataSource = objBalance.MostCuenta(fa);
             MostrarTotalCaja(Convert.ToDateTime(fa));
@@ -165,11 +164,6 @@ namespace PEscritorio
         {
             MostrarTotalEfectivo();
         }
-        //private void BuscarUsuario()
-        //{
-        //    dgvBuscarUsuario.DataSource = objUsuario.MostrarUsuario2();
-        //    dgvBuscarUsuario.Refresh();
-        //}
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -314,22 +308,6 @@ namespace PEscritorio
                 txtCinco.Text = "0";
             }
         }
-
-        private void txtTotalTarjeta_Click(object sender, EventArgs e)
-        {
-            //if (txtTotalTarjeta.Text == "Total Tarjeta")
-            //{
-            //    txtTotalTarjeta.Text = "0";
-            //}
-        }
-        //public void SumaTOTAL()
-        //{
-        //    double tarjeta = Convert.ToDouble(txtTotalTarjeta.Text);
-        //    double efectivo = Convert.ToDouble(txtTotalEfectivo.Text);
-        //    double total = 0;
-        //    total += tarjeta + efectivo;
-        //    txtTotalCaj.Text = total.ToString();
-        //}
         private void txtMil_TextChanged(object sender, EventArgs e)
         {
             MostrarTotalEfectivo();
@@ -359,25 +337,21 @@ namespace PEscritorio
         private void txtdiez_TextChanged(object sender, EventArgs e)
         {
             MostrarTotalEfectivo();
-
         }
 
         private void txtDos_TextChanged(object sender, EventArgs e)
         {
             MostrarTotalEfectivo();
-
         }
 
         private void txtCinco_TextChanged(object sender, EventArgs e)
         {
             MostrarTotalEfectivo();
-
         }
 
         private void txtUno_TextChanged(object sender, EventArgs e)
         {
             MostrarTotalEfectivo();
-
         }
 
         private void txtEncargadoCaja_Click(object sender, EventArgs e)
@@ -386,7 +360,6 @@ namespace PEscritorio
             {
                 txtEncargadoCaja.Clear();
             }
-
         }
 
         private void panel15_Paint(object sender, PaintEventArgs e)

@@ -149,7 +149,7 @@
             this.Pbusqueda.Controls.Add(this.button5);
             this.Pbusqueda.Controls.Add(this.txtBuscar);
             this.Pbusqueda.Controls.Add(this.dgvBuscarPinturas);
-            this.Pbusqueda.Location = new System.Drawing.Point(469, 226);
+            this.Pbusqueda.Location = new System.Drawing.Point(450, 248);
             this.Pbusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.Pbusqueda.Name = "Pbusqueda";
             this.Pbusqueda.Size = new System.Drawing.Size(645, 274);
@@ -441,6 +441,7 @@
             this.txtProveedor.Enabled = false;
             this.txtProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProveedor.Location = new System.Drawing.Point(971, 267);
+            this.txtProveedor.MaxLength = 13;
             this.txtProveedor.Multiline = true;
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Size = new System.Drawing.Size(526, 49);
@@ -597,6 +598,7 @@
             // 
             this.txtColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColor.Location = new System.Drawing.Point(225, 440);
+            this.txtColor.MaxLength = 30;
             this.txtColor.Multiline = true;
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(526, 49);
@@ -608,6 +610,7 @@
             // 
             this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMarca.Location = new System.Drawing.Point(225, 354);
+            this.txtMarca.MaxLength = 30;
             this.txtMarca.Multiline = true;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(526, 49);
@@ -619,6 +622,7 @@
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(225, 266);
+            this.txtCodigo.MaxLength = 15;
             this.txtCodigo.Multiline = true;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(526, 49);

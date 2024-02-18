@@ -248,6 +248,13 @@ namespace PEscritorio
         {
 
         }
+
+        private void BtnReportes_Click_1(object sender, EventArgs e)
+        {
+            ReprtesVentas nUEVO= new ReprtesVentas();
+            nUEVO.Show();
+
+        }
     }
 }
     

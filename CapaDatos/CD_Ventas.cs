@@ -62,17 +62,15 @@ namespace CapaDatos
             comandoIRV.ExecuteNonQuery();
         }
         //METODO PARA EDITAR REGISTROS
-        public void EditarRegistroVen(decimal NOVENTA, DateTime FECHA, decimal TOTAL, string FKURFC, string FKCLIRFC)
+        public void InsertarPago(decimal NOVENTA, decimal PAGO, decimal CAMBIO)
         {
             SqlCommand comandoEdV = new SqlCommand();
             comandoEdV.Connection = conexion.AbrirConexion();
-            comandoEdV.CommandText = "ActualizarVentas";
+            comandoEdV.CommandText = "InsertarPagos";
             comandoEdV.CommandType = CommandType.StoredProcedure;
             comandoEdV.Parameters.AddWithValue("@NOVENTA", NOVENTA);
-            comandoEdV.Parameters.AddWithValue("@FECHA", FECHA);
-            comandoEdV.Parameters.AddWithValue("@TOTAL", TOTAL);
-            comandoEdV.Parameters.AddWithValue("@FKURFC", FKURFC);
-            comandoEdV.Parameters.AddWithValue("@FKCLIRFC", FKCLIRFC);
+            comandoEdV.Parameters.AddWithValue("@PAGO", PAGO);
+            comandoEdV.Parameters.AddWithValue("@CAMBIO", CAMBIO);
             comandoEdV.ExecuteNonQuery();
         }
     }

@@ -168,7 +168,6 @@ namespace PEscritorio.Vistas
                             string Produccto = txtProd.Text;
                             string Unidad = txtUnida.Text;
                             string RFCU = lbRFCU.Text;
-                            MessageBox.Show("los datos a añadir son" + Decimal.Parse(lbcot.Text) + DateTime.Parse(DTPVentas.Text) + Tot + Can + RFCU + Codigo + lBCLIENTE.Text);
                             newCOT.InsertarCOT(NumCOt, DTPVentas.Value, Tot, Can, RFCU, Codigo, lBCLIENTE.Text);
                         }
                         COTIZACION repcot = new COTIZACION(NUMECOT);
@@ -426,6 +425,27 @@ namespace PEscritorio.Vistas
             else
             {
                 MessageBox.Show("Selecciona una fila para eliminar.");
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // Permitir solo un punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

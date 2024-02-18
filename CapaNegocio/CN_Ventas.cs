@@ -28,6 +28,10 @@ namespace CapaNegocio
         {
             objetoCD.InsertarRegistro(Convert.ToDecimal(NOVENTA),Convert.ToDateTime(FECHA), Convert.ToDecimal(TOTAL), FKURFC, FKCLIRFC);
         }
+        public void InsertarPago(decimal NOVENTA, decimal PAGO, decimal CAMBIO)
+        {
+            objetoCD.InsertarPago(Convert.ToDecimal(NOVENTA), Convert.ToDecimal(PAGO), Convert.ToDecimal(CAMBIO));
+        }
         public DataTable MostrarCot()
         {
             DataTable tabla = new DataTable();

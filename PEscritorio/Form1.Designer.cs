@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.LBubicacion = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.BtnBalance = new System.Windows.Forms.Button();
             this.BtnReportes = new System.Windows.Forms.Button();
             this.BtnRegistro = new System.Windows.Forms.Button();
@@ -52,9 +45,16 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.LBubicacion = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.rjDropdownMenu1 = new CustomControls.RJControls.RJDropdownMenu(this.components);
             this.pROVEEDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,11 +73,11 @@
             this.pINTURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mATERIALESToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelMenu.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.rjDropdownMenu1.SuspendLayout();
             this.DMregistros.SuspendLayout();
             this.SuspendLayout();
@@ -105,85 +105,6 @@
             this.PanelMenu.Size = new System.Drawing.Size(79, 728);
             this.PanelMenu.TabIndex = 0;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.panel4.Controls.Add(this.panel28);
-            this.panel4.Controls.Add(this.panel10);
-            this.panel4.Controls.Add(this.panel9);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1098, 64);
-            this.panel4.TabIndex = 0;
-            // 
-            // panel28
-            // 
-            this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.panel28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel28.Controls.Add(this.lblUsuario);
-            this.panel28.Controls.Add(this.panel1);
-            this.panel28.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel28.Location = new System.Drawing.Point(857, 0);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(241, 64);
-            this.panel28.TabIndex = 2;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUsuario.Location = new System.Drawing.Point(66, 25);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(84, 20);
-            this.lblUsuario.TabIndex = 6;
-            this.lblUsuario.Text = "USUARIO";
-            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.panel10.Controls.Add(this.LBubicacion);
-            this.panel10.Controls.Add(this.panel12);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(79, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1019, 64);
-            this.panel10.TabIndex = 1;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
-            // 
-            // LBubicacion
-            // 
-            this.LBubicacion.AutoSize = true;
-            this.LBubicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBubicacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LBubicacion.Location = new System.Drawing.Point(77, 21);
-            this.LBubicacion.Name = "LBubicacion";
-            this.LBubicacion.Size = new System.Drawing.Size(70, 24);
-            this.LBubicacion.TabIndex = 5;
-            this.LBubicacion.Text = "MENU";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.panel11);
-            this.panel5.Controls.Add(this.PanelMenu);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 64);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1098, 728);
-            this.panel5.TabIndex = 4;
-            // 
-            // panel11
-            // 
-            this.panel11.BackgroundImage = global::PEscritorio.Properties.Resources.PANTALLAs;
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(79, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1019, 728);
-            this.panel11.TabIndex = 3;
-            // 
             // BtnBalance
             // 
             this.BtnBalance.Dock = System.Windows.Forms.DockStyle.Top;
@@ -208,6 +129,7 @@
             this.BtnReportes.Size = new System.Drawing.Size(79, 75);
             this.BtnReportes.TabIndex = 27;
             this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click_1);
             // 
             // BtnRegistro
             // 
@@ -364,6 +286,42 @@
             this.panel3.Size = new System.Drawing.Size(79, 0);
             this.panel3.TabIndex = 1;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.panel4.Controls.Add(this.panel28);
+            this.panel4.Controls.Add(this.panel10);
+            this.panel4.Controls.Add(this.panel9);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1098, 64);
+            this.panel4.TabIndex = 0;
+            // 
+            // panel28
+            // 
+            this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.panel28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel28.Controls.Add(this.lblUsuario);
+            this.panel28.Controls.Add(this.panel1);
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel28.Location = new System.Drawing.Point(857, 0);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(241, 64);
+            this.panel28.TabIndex = 2;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblUsuario.Location = new System.Drawing.Point(66, 25);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(84, 20);
+            this.lblUsuario.TabIndex = 6;
+            this.lblUsuario.Text = "USUARIO";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
@@ -375,6 +333,29 @@
             this.panel1.Size = new System.Drawing.Size(49, 64);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.panel10.Controls.Add(this.LBubicacion);
+            this.panel10.Controls.Add(this.panel12);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(79, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1019, 64);
+            this.panel10.TabIndex = 1;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // LBubicacion
+            // 
+            this.LBubicacion.AutoSize = true;
+            this.LBubicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBubicacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LBubicacion.Location = new System.Drawing.Point(77, 21);
+            this.LBubicacion.Name = "LBubicacion";
+            this.LBubicacion.Size = new System.Drawing.Size(70, 24);
+            this.LBubicacion.TabIndex = 5;
+            this.LBubicacion.Text = "MENU";
             // 
             // panel12
             // 
@@ -396,6 +377,26 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(79, 64);
             this.panel9.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel11);
+            this.panel5.Controls.Add(this.PanelMenu);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 64);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1098, 728);
+            this.panel5.TabIndex = 4;
+            // 
+            // panel11
+            // 
+            this.panel11.BackgroundImage = global::PEscritorio.Properties.Resources.PANTALLAs;
+            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(79, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1019, 728);
+            this.panel11.TabIndex = 3;
             // 
             // rjDropdownMenu1
             // 
@@ -556,13 +557,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.PanelMenu.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.rjDropdownMenu1.ResumeLayout(false);
             this.DMregistros.ResumeLayout(false);
             this.ResumeLayout(false);
